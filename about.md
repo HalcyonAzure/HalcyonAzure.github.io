@@ -45,6 +45,13 @@ int main()
 - 不 挂 科（最难の任务）
 - 搭建一个稳定可用的家用NAS及服务器
 
+## 友链
+
+* [TURXのブログ](https://turx.gq/)
+* [AjiL's Blog](https://blog.ajil.xyz/)
+* [睿智阿曾的技术小屋](https://ecachen.monster/)
+* [道阻且长](https://volta-sun.github.io/)
+
 ## 联系方式
 
  **下面的三个小圈圈都行，发邮件通常都能看见**
