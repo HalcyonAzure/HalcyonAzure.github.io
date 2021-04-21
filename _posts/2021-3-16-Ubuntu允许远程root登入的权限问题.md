@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Ubuntu下开启root用户的远程连接权限"
 date: 2021-3-16
 description: "在Ubuntu下启用root的远程ssh权限"

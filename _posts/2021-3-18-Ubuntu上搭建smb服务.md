@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "搭建smb服务器来浏览离线下载的文件"
 date: 2021-3-18
 descripiton: "搭建smb服务来达到直接使用文件的目的"

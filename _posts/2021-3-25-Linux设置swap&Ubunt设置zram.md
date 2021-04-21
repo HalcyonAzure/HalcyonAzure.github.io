@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Linux下启用swap文件以及Ubuntu下zram和zswap的设置"
 date: 2021-3-25
 descripition: "通过增加swap文件设置系统的虚拟内存,并且配置zram使得分配更加灵活"

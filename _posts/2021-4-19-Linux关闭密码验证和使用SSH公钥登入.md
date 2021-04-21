@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Linux使用RSA密钥登入并关闭密码登入"
 date: 2021-4-19
 description: "通过使用RSA密钥登入，并且关闭明文密码登入加强服务器的安全性"

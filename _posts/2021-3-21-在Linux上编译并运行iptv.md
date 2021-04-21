@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "通过脚本在Linux上运行ncu的iptv"
 date: 2021-3-21
 descripition: "通过脚本来避免flash运行iptv来达到凑时间的目的"

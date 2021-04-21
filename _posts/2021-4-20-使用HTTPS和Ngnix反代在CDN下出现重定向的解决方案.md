@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Nginx+HTTPS+CDN出现网站重定向的解决方案"
 date: 2021-4-20
 description: "给CloudReve使用Nginx反代HTTPS并使用Cloudflare的CDN出现网络重定向的解决方案"

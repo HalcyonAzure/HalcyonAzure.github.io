@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "使用CloudFlare的CDN加速Nginx网站出现520"
 date: 2021-4-21
 description: "CloudFlare的CDN加速Nginx网站出现520报错的解决方案"

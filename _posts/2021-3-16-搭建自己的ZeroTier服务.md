@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "搭建自己的ZeroTier网络控制"
 date: 2021-3-16
 description: "通过搭建国内的网络控制来管理ZeroTier网络"

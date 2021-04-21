@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "CloudReve私有网盘部署"
 date: 2021-4-6
 descripition: "Ubuntu下搭建CloudReve私有网盘并配置SSL证书"

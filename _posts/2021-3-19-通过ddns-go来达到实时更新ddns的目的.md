@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "在Ubuntu上更新ddns"
 date: 2021-3-19
 descripiton: "在Ubuntu上配置ddns的更新"

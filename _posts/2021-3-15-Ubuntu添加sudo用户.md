@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Ubuntu下创建拥有sudo权限的user"
 date: 2021-3-15 
 description: "创建非root用户，通过sudo来操作一些必要操作"

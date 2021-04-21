@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Windows下通过命令行计算文件的Hash值"
 date: 2021-3-17
 description: "通过命令行指令直接查询文件的MD5 SHA256等来校验下载文件"

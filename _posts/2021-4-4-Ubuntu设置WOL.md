@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Ubuntu配置wol"
 date: 2021-4-4
 descripition: "笔记本上的Ubuntu设置网络唤醒"

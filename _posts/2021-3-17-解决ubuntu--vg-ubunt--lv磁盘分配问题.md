@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "解决/dev/mapper/ubuntu--vg-ubuntu--lv容量问题"
 date: 2021-3-17
 descripition: "在装完Ubuntu Server之后，由于安装的时候选择出问题导致有一部分磁盘空间无法被挂载使用的解决办法"

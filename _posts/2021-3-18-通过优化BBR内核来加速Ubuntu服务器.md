@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "通过一键式脚本来安装魔改/优化BBR"
 date: 2021-3-18
 descripiton: "解决Ubuntu本身系统TCP传输效率较低，速度跑不满的问题"

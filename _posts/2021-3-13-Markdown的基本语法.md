@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Markdown基本语法"
 date: 2021-3-13 
 description: "一个对于MarkDown基本语法的记录,保存在blog中方便后续查看"
