@@ -12,12 +12,17 @@ tag: Ubuntu-Server-Tools
 
 1. 安装依赖库(Ubuntu下，CentOS请在github脚本来源查询)
 
-   `apt-get install ca-certificates wget -y && update-ca-certificates`
+   ```shell
+   apt-get install ca-certificates wget -y && update-ca-certificates
+   ```
 
 2. 安装脚本
 
-   `wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh`
+   ```shell
+   wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
+   ```
    
 3. 在Ubuntu19以下的系统可以用BBRplus，其他不明，自用为原版BBR加速和系统设置加速。
+
 4. 设置完毕以后通过speedtest-cli测速，明显传输快了很多。
 
