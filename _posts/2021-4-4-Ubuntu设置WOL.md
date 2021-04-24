@@ -28,7 +28,7 @@ tag: Laptop Server改造计划
 
 5. 创建开机进程
 
-   `sudo vi /etc/systemd/system/wol/service`
+   `sudo vi /etc/systemd/system/wol.service`
 
 6. 写入以下内容
 

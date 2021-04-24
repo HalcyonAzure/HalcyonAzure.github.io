@@ -16,10 +16,8 @@ tag: Ubuntu-Server-Tools
 
 2. 安装脚本
 
-   ```bsh
-   wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
-   ```
-
+   `wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh`
+   
 3. 在Ubuntu19以下的系统可以用BBRplus，其他不明，自用为原版BBR加速和系统设置加速。
 4. 设置完毕以后通过speedtest-cli测速，明显传输快了很多。
 
