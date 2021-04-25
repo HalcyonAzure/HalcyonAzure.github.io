@@ -51,7 +51,6 @@ int main()
 * [AjiL's Blog](https://blog.ajil.xyz/)
 * [睿智阿曾的技术小屋](https://ecachen.monster/)
 * [道阻且长](https://cans.top/)
-* [Post | あんこ](https://fengfengchenchen.github.io/vuepress-blog/)
 
 ## 联系方式
 
