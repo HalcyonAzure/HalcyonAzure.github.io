@@ -31,11 +31,11 @@ title: "使用自定义Cloudflare CDN加速自己的网站"
 
    ![域名添加](\2021\04\images\CDN_2.png)
    
-   <div align=center>CNAME信息
+   <div align=center>CNAME信息 </div>
    
    ![Dnspod设置](\2021\04\images\CDN_3.png)
    
-   <div align=center>Dnspod设置
+   <div align=center>Dnspod设置 </div>
    
    
 
