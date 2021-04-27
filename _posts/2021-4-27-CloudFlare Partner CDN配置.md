@@ -29,10 +29,12 @@ title: "使用自定义Cloudflare CDN加速自己的网站"
 
 4. 添加完毕以后在CNAME接入处可以看到主机名对应的CNAME信息，在Dnspod设置对应的解析就可以使用CDN的解析服务。
 
-   <div align=center>![域名添加](\2021\04\images\CDN_2.png)
+   ![域名添加](\2021\04\images\CDN_2.png)
+   
    <div align=center>CNAME信息
-
-   <div align=center>![Dnspod设置](\2021\04\images\CDN_3.png)
+   
+   ![Dnspod设置](\2021\04\images\CDN_3.png)
+   
    <div align=center>Dnspod设置
    
    
