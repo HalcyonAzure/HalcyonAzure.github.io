@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "解决路由器重启后ZeroTier的设备ID重新分配的问题"
-tag: Openwrt_Tools
+tag: OpenWrt_Tools
 ---
 
 # 原因
