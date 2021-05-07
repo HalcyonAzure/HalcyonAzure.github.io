@@ -6,7 +6,7 @@ tag: OpenWrt_Tools
 
 # 原因
 
-​	每次重启Openwrt后，ZeroTier的虚拟网卡MAC地址会改变。导致网站后台认为是一台新设备，重新分配IP地址。
+​	每次重启Openwrt后，ZeroTier的虚拟网卡MAC地址会改变。导致网站后台认为是一台新设备，重新分配设备ID。
 
 # 解决方法
 
