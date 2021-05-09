@@ -120,3 +120,18 @@ tag: Ubuntu-Server-Tools
 3. 在/home文件夹下创建moons.d文件夹（修改`cp /home/moons.d`可以修改需要设置的路径）
 
 4. 把moon的签名文件00000xxx.moon放于该文件夹内，并重启ZeroTier即可
+
+#### 补充：解决Openwrt重启后ZeroTier的ID重新分配的问题
+
+1. 启动Openwrt上的ZeroTier
+
+2. 输入以下指令
+
+   ```shell
+   cp -a /var/lib/zerotier-one /etc/zerotier
+   ```
+
+3. 修改`/etc/config/zerotier`的配置文件，添加以下内容
+
+   `option config_path '/etc/zerotier'`
+
