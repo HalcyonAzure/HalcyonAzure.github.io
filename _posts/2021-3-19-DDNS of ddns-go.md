@@ -3,7 +3,7 @@ layout: article
 title: "在Ubuntu上更新ddns"
 date: 2021-3-19
 descripiton: "在Ubuntu上配置ddns的更新"
-tag: Ubuntu-Server-Tools
+tag: Ubuntu
 ---
 
 本文脚本来源：[ddns-go]([jeessy2/ddns-go: 简单好用的DDNS。自动更新域名解析到公网IP(支持阿里云、腾讯云dnspod、Cloudflare、华为云) (github.com)](https://github.com/jeessy2/ddns-go))

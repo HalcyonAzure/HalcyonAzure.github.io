@@ -3,7 +3,7 @@ layout: article
 title: "笔记本盖上盖子Ubuntu Server不休眠"
 date: 2021-3-14
 description: "防止由于关上盖子而导致的Ubuntu系统休眠"
-tag: Laptop Server改造计划
+tag: Laptop
 ---
 
 > 前段时间一直希望能有一个自己方便的，不限速的网络存储工具，可以及时存入自己的工具的同时运行一些自己需要的工具，并且为日后Minecraft服务器的搭建做一定准备，先把可能遇到的问题排除

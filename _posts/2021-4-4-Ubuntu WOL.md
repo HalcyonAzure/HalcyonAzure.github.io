@@ -3,7 +3,7 @@ layout: article
 title: "Ubuntu配置wol"
 date: 2021-4-4
 descripition: "笔记本上的Ubuntu设置网络唤醒"
-tag: Laptop Server改造计划
+tag: Laptop
 ---
 
 1. 安装网络管理工具

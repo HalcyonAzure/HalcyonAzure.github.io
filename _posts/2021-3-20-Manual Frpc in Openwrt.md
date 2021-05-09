@@ -3,7 +3,7 @@ layout: article
 title: "OpenWRT上手动安装Frpc服务"
 date: 2021-3-20
 description: "OpenWrt通过init.d启动Frpc服务"
-tag: OpenWrt_Tools
+tag: OpenWRT
 ---
 
 ---

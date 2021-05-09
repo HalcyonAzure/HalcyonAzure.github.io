@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "删除多余的Ubuntu内核,解决因grub无法正常启动的问题"
-tag: Ubuntu-Server-Tools
+tag: Ubuntu
 ---
 
 

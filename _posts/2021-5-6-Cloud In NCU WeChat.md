@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "南昌大学企业微信打卡"
-tag: NCU_Tools
+tag: NCU
 ---
 
 # 声明

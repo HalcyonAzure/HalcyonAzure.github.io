@@ -3,7 +3,7 @@ layout: article
 title: "查看Ubuntu下笔记本温度"
 date: 2021-3-25
 description: "通过sensors查看笔记本的温度"
-tag: Laptop Server改造计划
+tag: Laptop
 ---
 
 # 安装

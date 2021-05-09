@@ -3,7 +3,7 @@ layout: article
 title: "通过脚本在Linux上运行ncu的iptv"
 date: 2021-3-21
 descripition: "通过脚本来避免flash运行iptv来达到凑时间的目的"
-tag: NCU_Tools
+tag: NCU
 ---
 
 > 由于学校（南昌大学）要求每个月必须看满五个小时的iptv，并且iptv直接在浏览器上观看是需要安装flash或者包含flash的浏览器的。而如今flash的末路使得不少人头疼，在github上偶然发现有学长用go语言编写了一个脚本，在这里记录一下在Linux上的使用过程。

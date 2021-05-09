@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Ubuntu下apt清理软件残余
-tag: Ubuntu-Server-Tools
+tag: Ubuntu
 ---
 
 # 参考网站

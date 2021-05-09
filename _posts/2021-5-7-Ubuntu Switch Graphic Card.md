@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Ubuntu下切换Intel集显和Nvidia独显
-tag: Laptop Server改造计划
+tag: Laptop
 ---
 
 # 参考文章
