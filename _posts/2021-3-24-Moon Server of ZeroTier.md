@@ -3,7 +3,7 @@ layout: article
 title: "ZeroTier下Moon服务器的搭建"
 date: 2021-3-24
 description: "通过搭建国内的Moon来加速中转ZeroTier网络"
-tag: Ubuntu
+tag: ZeroTier
 ---
 
 参考链接:

@@ -3,7 +3,7 @@ layout: article
 title: "搭建自己的ZeroTier网络控制"
 date: 2021-3-16
 description: "通过搭建国内的网络控制来管理ZeroTier网络"
-tag: Ubuntu
+tag: ZeroTier
 ---
 
 > **本来的理解**: 在使用ZeroTier的时候经常会出现穿透失败，或者穿透延迟过大但是中转服务器不好用的情况，之前有参考过网上的教程来通过一台国内的VPS搭建自己的MOON节点来达到加速的目的，但是最后的效果不尽人意，而且还存在安卓端添加mood节点并不轻松的问题，所以在这里采取直接通过[key-networks/ztncui: ZeroTier network controller UI](https://github.com/key-networks/ztncui)搭建自己的ZeroTier根服务器
@@ -24,7 +24,6 @@ tag: Ubuntu
    curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg' | gpg --import && \
    if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
    ```
-   
 # 部署ztncui
 
 ## RPM installation on EL7
