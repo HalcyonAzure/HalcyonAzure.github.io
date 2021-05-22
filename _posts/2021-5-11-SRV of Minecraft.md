@@ -1,7 +1,7 @@
 ---
 layout: article
 title: 通过添加域名的SRV记录达到隐藏端口的作用
-tag: DNS
+tag: Web
 ---
 
 # 记录
