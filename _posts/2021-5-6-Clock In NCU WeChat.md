@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "南昌大学企业微信打卡[已失效]"
+title: "南昌大学企业微信打卡"
 tag: NCU
 ---
 
