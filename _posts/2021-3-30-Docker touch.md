@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Docker初识"
+title: "Docker指令"
 date: 2021-3-30
 description: "第一次接触Docker，记录一些比较常见的设置"
 tag: Docker
@@ -58,6 +58,12 @@ tag: Docker
 * 删除所有未被引用的容器，镜像和各种cache
 
   `docker system prune`
+  
+* 重命名容器
+
+  ```shell
+  docker rename [Docker的Name] [修改后的Name]
+  ```
 
 
 
@@ -104,3 +110,22 @@ tag: Docker
    * 如果已经启动了可以通过`docker update --restart=always <ID>`添加参数
 
 3. 重启系统以后通过`docker ps -a`可以看到服务已经在正常运行了
+
+# Docker容器参数配置
+
+1. 用命令修改
+
+   ```shell
+   docker container update --help
+   ```
+
+   > 使用这个指令可以在不停止容器的情况下更新部分内容，比如容器的启动方式
+
+2. 配置文件修改
+
+   * *** 首先要停止容器，才能对容器的配置文件进行修改 ***
+   * 配置路径为`/var/lib/docker/containers/容器ID`下的`hostconfig.json`就是配置文件
+
+   
+
+   
