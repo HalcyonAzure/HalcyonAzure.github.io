@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Ubuntu下切换Intel集显和Nvidia独显
-tag: Laptop
+tag: Ubuntu
 ---
 
 # 参考文章

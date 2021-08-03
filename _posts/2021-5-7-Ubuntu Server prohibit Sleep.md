@@ -1,7 +1,7 @@
 ---
 layout: article
 title: 禁用笔记本上Ubuntu Server的自动休眠
-tag: Laptop
+tag: Ubuntu
 ---
 
 # 参考网址:
