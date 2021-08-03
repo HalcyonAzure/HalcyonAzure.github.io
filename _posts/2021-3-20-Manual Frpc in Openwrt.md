@@ -3,7 +3,7 @@ layout: article
 title: "OpenWRT上手动安装Frpc服务"
 date: 2021-3-20
 description: "OpenWrt通过init.d启动Frpc服务"
-tag: OpenWRT
+tag: Frp
 ---
 
 ---
@@ -36,23 +36,23 @@ tag: OpenWRT
 
    ```
    #!/bin/sh /etc/rc.common
-
+	
 	START=90
 	STOP=90
 	SERVICE=frpc
 	USE_PROCD=1
 	PROC="/usr/bin/frpc -c /etc/frp/frpc.ini"
-
+	
 	start_service()
-
+	
 	{
 	    procd_open_instance
 	    procd_set_param command $PROC
 	    procd_set_param respawn
 	    procd_close_instance
-
+	
 	}
-
+	
 	service_triggers()
 	{
 	    procd_add_reload_trigger "rpcd"

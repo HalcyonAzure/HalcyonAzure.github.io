@@ -3,7 +3,7 @@ layout: article
 title: "VPS上一键部署Frps服务"
 date: 2021-3-14
 description: "通过一键脚本来安装Frps服务"
-tag: Ubuntu
+tag: Frp
 ---
 
 ---

@@ -3,7 +3,7 @@ layout: article
 title: "VPS上手动安装Frpc服务"
 date: 2021-3-14
 description: "手动下载安装并通过systemctl启动控制Frpc"
-tag: Ubuntu
+tag: Frp
 ---
 
 ---
