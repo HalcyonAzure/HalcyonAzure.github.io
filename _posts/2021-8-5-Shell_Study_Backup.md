@@ -86,22 +86,26 @@ tag: [Shell,Rclone,Backup]
    
    # 压缩备份路径
    7za a -t7z -r "$BackupPath"/"$BackupZip" "$BackupPath"/"$BackupFolder"
+   echo -e "${Info}文件压缩完毕"
    
    # 生成文件的sha1文件
    # sha1sum "$BackupZip" >"$BackupZip".sha1
    
    # 将文件转移到Rclone中
    Upload_Bak() {
-   	echo -e "${Info}文件压缩完毕，开始上传..."
-   	rclone copy "$BackupPath"/"$BackupZip" "$RcloneConfig:$RemotePath" -P
-   	echo -e "${Info}上传文件成功，1s后开始校验信息"
+   	echo -e "${Info}开始上传..."
+   	if ! rclone copy "$BackupPath"/"$BackupZip" "$RcloneConfig:$RemotePath"; then
+   		echo -e "${Error}上传失败!"
+   		exit 1
+   	fi
+   	echo -e "${Info}上传文件成功，3s后开始校验信息"
    	# 停止3s，避免因为频繁使用io被禁用
-   	sleep 1s
+   	sleep 3s
    }
    
    # 尝试次数初始化
    TryCounters=1
-   #校验转移后文件的sha1值是否符合，只会尝试三次，否则退出脚本
+   #校验转移后文件的sha1值是否符合，只会尝试三次，否则退出脚本（zxbu的库中WebDav不校验文件）
    Check_Sha1() {
    	# 生成校验信息
    	echo -e "${Info}开始校验信息..."
@@ -126,7 +130,7 @@ tag: [Shell,Rclone,Backup]
    		TryCounters=$((TryCounters + 1))
    		if [ $TryCounters -gt 3 ]; then
    			echo -e "${Error}上传三次均失败，请检查网络环境"
-   			exit 0
+   			exit 3
    		else
    			echo -e "${Info}开始第${TryCounters}次上传"
    			Upload_Bak
@@ -139,7 +143,7 @@ tag: [Shell,Rclone,Backup]
    Check_Sha1
    
    echo -e "${Info}备份脚本完成"
-   exit 1
+   exit 0
    ```
    
    >Shell大概看了两三天的时间，里面有些格式和规范还需要调整，日后再对脚本进行优化一下
