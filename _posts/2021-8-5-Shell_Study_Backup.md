@@ -82,14 +82,14 @@ tag: [Shell,Rclone,Backup]
    BackupZip="${BackupFolder}-$(date +%F-%H-%M).7z"
    
    # 压缩备份路径
-   7za a -t7z -r "$BackupZip" "$BackupPath"/"$BackupFolder"
+   7za a -t7z -r "$BackupPath"/"$BackupZip" "$BackupPath"/"$BackupFolder"
    
    # 生成文件的sha1文件
    # sha1sum "$BackupZip" >"$BackupZip".sha1
    
    # 将文件转移到Rclone中
    Upload_Bak() {
-   	rclone copy "$BackupZip" "$RcloneConfig:$RemotePath" -P
+   	rclone copy ""$BackupPath"/$BackupZip" "$RcloneConfig:$RemotePath" -P
    	echo -e "${Info}上传文件成功，1s后开始校验信息"
    	# 停止3s，避免因为频繁使用io被禁用
    	sleep 1s
@@ -108,7 +108,7 @@ tag: [Shell,Rclone,Backup]
    	# 对比校验信息
    	if [ "$LocalSHA1" = "$RemoteSHA1" ]; then
    		#删除本地的备份文件
-   		rm "$BackupZip"
+   		rm "$BackupPath"/"$BackupZip"
    		echo -e "${Info}校验成功！删除本地备份"
    	else
    		echo -e "${Error}上传校验失败，删除远端文件并重新上传"
