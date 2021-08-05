@@ -58,6 +58,9 @@ tag: [Shell,Rclone,Backup]
    ```shell
    #!/bin/sh
    
+   # 忽略echo和printf的提醒
+   # shellcheck disable=SC3000-SC4000
+   
    #######################################################################
    #  作者: HalcyonAzure
    #  时间: 2021-8-5
@@ -102,8 +105,10 @@ tag: [Shell,Rclone,Backup]
    	# 生成校验信息
    	echo -e "${Info}开始校验信息..."
    	LocalSHA1="$(sha1sum "$BackupZip")"
+   	LocalSHA1="${LocalSHA1:0:39}"
    	echo -e "${Info}本地校验信息：$LocalSHA1"
    	RemoteSHA1="$(rclone sha1sum "$RcloneConfig":"$RemotePath"/"$BackupZip" --download)"
+   	RemoteSHA1="${RemoteSHA1:0:39}"
    	echo -e "${Info}远端校验信息：$RemoteSHA1"
    	# 对比校验信息
    	if [ "$LocalSHA1" = "$RemoteSHA1" ]; then
@@ -135,5 +140,5 @@ tag: [Shell,Rclone,Backup]
    echo -e "${Info}备份脚本完成"
    exit 1
    ```
-
+   
    >Shell大概看了两三天的时间，里面有些格式和规范还需要调整，日后再对脚本进行优化一下
