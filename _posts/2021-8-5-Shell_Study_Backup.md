@@ -78,7 +78,7 @@ tag: [Shell,Rclone,Backup]
    # Rclone的信息
    RcloneConfig="Aliyun"
    RemotePath="/Backup/Test"
-   BackupPath="."
+   BackupPath="/mnt/files"
    BackupFolder="backup_test"
    
    # 备份的压缩包名字
