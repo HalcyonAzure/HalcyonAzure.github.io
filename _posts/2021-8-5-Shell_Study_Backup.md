@@ -92,7 +92,7 @@ tag: [Shell,Rclone,Backup]
    
    # 将文件转移到Rclone中
    Upload_Bak() {
-   	rclone copy ""$BackupPath"/$BackupZip" "$RcloneConfig:$RemotePath" -P
+   	rclone copy "$BackupPath"/"$BackupZip" "$RcloneConfig:$RemotePath" -P
    	echo -e "${Info}上传文件成功，1s后开始校验信息"
    	# 停止3s，避免因为频繁使用io被禁用
    	sleep 1s
