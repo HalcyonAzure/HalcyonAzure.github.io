@@ -94,7 +94,8 @@ tag: [Shell,Rclone,Backup]
    # 将文件转移到Rclone中
    Upload_Bak() {
    	echo -e "${Info}开始上传..."
-   	if ! rclone copy "$BackupPath"/"$BackupZip" "$RcloneConfig:$RemotePath"; then
+   	# retries是指上传失败以后重试的次数，Buffer-size是缓存，这里可以调小一点，512M为示例
+   	if ! rclone copy --retries=1 --buffer-size=512M "$BackupPath"/"$BackupZip" "$RcloneConfig:$RemotePath"; then
    		echo -e "${Error}上传失败!"
    		exit 1
    	fi
