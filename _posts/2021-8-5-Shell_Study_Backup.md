@@ -110,7 +110,7 @@ tag: [Shell,Rclone,Backup]
    Check_Sha1() {
    	# 生成校验信息
    	echo -e "${Info}开始校验信息..."
-   	LocalSHA1="$(sha1sum "$BackupZip")"
+   	LocalSHA1="$(sha1sum "$BackupPath"/"$BackupZip")"
    	LocalSHA1="${LocalSHA1:0:39}"
    	echo -e "${Info}本地校验信息：$LocalSHA1"
    	RemoteSHA1="$(rclone sha1sum "$RcloneConfig":"$RemotePath"/"$BackupZip" --download)"
