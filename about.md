@@ -26,7 +26,7 @@ titles:
 key: page-about
 ---
 
-![BackGround](https://cd.halc.top/seafhttp/files/cc0d60a0-55e5-4a57-8325-c4902b07cb85/BackGround.jpg)
+![BackGround](https://bl3301files.storage.live.com/y4m9_r5frcAnzxFcRDnrsOYK0XGfC-9kearaTzxxnstGWb5pzqsnaaQyKv4AMA0F1oNkwgCHzWzTOOrg55JAw1v5pyivH05vSrHPMwwMfYsMdrxN-Tjhv-1ZldJm6uE_e1HXtchW7AImBB3T47lyS3J2p4QIvIA6tetwFQxUDjPucigu1mxPkUfYnalaF6cPsG3?width=2000&height=1209&cropmode=none)
 
 来了大学以后总算是有了大把大把的时间研究之前一直都想研究但是没时间研究的东西，不过在学习的过程中发现总是会出现学一点丢一点的情况。想在一次上学校社团课偶然看到学长的Blog的时候，就突然觉得自己也有必要弄一个Blog了，然后在学长的建议下利用`Github Pages+jekyll`简单的搭了一个这样的Blog，来记录自己一路学的"没什么用"的小知识，也是给以后的自己留个备注。
 
