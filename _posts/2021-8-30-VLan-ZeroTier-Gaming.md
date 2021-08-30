@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 通过ZeroTier实现局域网联机
+title: 通过ZeroTier实现局域网自动扫描联机
 tag: [ZeroTier,Game]
 ---
 
@@ -36,7 +36,6 @@ tag: [ZeroTier,Game]
    
    ![IPv4的属性](https://tc.halc.top/images/2021/08/30/imagee1b9fdf2762c42ab.png)
    
-
 5. 打开属性中的“**高级**”
 
    ![高级](https://tc.halc.top/images/2021/08/30/image5c44f8ffa7ea34c7.png)
