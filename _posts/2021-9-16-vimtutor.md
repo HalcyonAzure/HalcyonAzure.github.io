@@ -1,6 +1,6 @@
 ---
 layout: article
-title:　"VIM学习手册"
+title: "VIM学习手册"
 tag: Vim
 ---
 
