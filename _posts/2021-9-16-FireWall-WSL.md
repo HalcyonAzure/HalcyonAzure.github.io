@@ -6,7 +6,7 @@ tag: WSL
 
 # 摘抄文章：
 
-* [WSL2 的一些网络访问问题 | Artin's Blog](https://lengthmin.me/posts/wsl2-network-tricks/)
+* [WSL2 的一些网络访问问题](https://lengthmin.me/posts/wsl2-network-tricks/)
 
 # 前置知识补充
 
@@ -17,7 +17,7 @@ tag: WSL
 
 # 代理配置
 
- ## 方案一
+## 方案一
 
 ### 主机设置代理端口，WSL通过端口代理
 
