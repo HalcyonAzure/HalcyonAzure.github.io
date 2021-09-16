@@ -62,7 +62,7 @@ tag: WSL
 1. 进入网站[Wintun](https://www.wintun.net/)，点击界面中`Download Wintun xxx`下载压缩包，根据系统版本将对应目录中`wintun.dll`复制至`Home Directory`目录中。基于`x64`的处理器的`64`位操作系统请使用`amd64`版本，`32`位操作系统请使用`x86`版本
 2. 点击`General`中`Service Mode`右边`Manage`，在打开窗口中安装服务模式，安装完成应用会自动重启，Service Mode 右边地球图标变为`绿色`即安装成功
 
-> 以上两点来自于[TUN 模式 | Clash for Windows](https://docs.cfw.lbyczf.com/contents/tun.html#windows)
+> 以上两点来自于[TUN 模式 Clash for Windows](https://docs.cfw.lbyczf.com/contents/tun.html#windows)
 
 3. 启用Clash中的`Mixin选项`
 
