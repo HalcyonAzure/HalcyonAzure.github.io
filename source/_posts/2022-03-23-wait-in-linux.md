@@ -1,0 +1,67 @@
+---
+layout: article
+title: "wait()和waitpid()调用"
+tag: os
+---
+
+在写完`OSTEP`第五章课后习题之后，通过第八题的答案记录一下自己目前对`waitpid()`的尝试结果，目前的尝试仅限于进程执行的阻塞和等待，轮询和非阻塞的状态暂时没有遇到，日后补充。
+
+## 进程等待
+
+`waitpid()`不能用于子进程等待更早的另外一个子进程，如果尝试运行则会返回`-1`。（在父进程中则等待并返回子进程对应的`pid`)
+
+这里举例说明，以下为一个不包含任何`waitpid()`的原始代码
+
+```cpp
+int main()
+{
+    // 创建第一个子进程
+    int rc_1 = fork(); 
+    if (rc_1 == 0)
+    {
+        exit(0);
+    }
+
+    // 创建第二个子进程
+    int rc_2 = fork();
+    if (rc_2 == 0)
+    {
+        exit(0)
+    }
+    return 0;
+}
+```
+
+该代码通过`waitpid()`函数可以实现在`rc_1`和`rc_2`都执行完毕之后，再执行主进程的内容，修改如下
+
+```cpp
+int main()
+{
+    // 创建第一个子进程
+    int rc_1 = fork();
+    ...
+
+    // 创建第二个子进程
+    int rc_2 = fork();
+    ...
+
+    waitpid(rc_1, NULL, 0);  // 等待第一个进程(pid为rc_1的进程)结束
+    waitpid(rc_2, NULL, 0);  // 等待第二个进程(pid为rc_2的进程)结束
+    return 0;
+}
+```
+
+但是在子进程中调用`waitpid()`是不能做到让`rc_2`等待`rc_1`的。[参考:stackoverflow](https://stackoverflow.com/questions/17330182/what-happens-if-i-use-wait-in-child-process)
+
+比如修改`rc_2`的代码如下
+
+```cpp
+int rc_2 = fork();
+    if (rc_2 == 0)
+    {
+        int wr = waitpid(rc_1, NULL, 0);
+        exit(0)
+    }
+```
+
+通过以上的代码并不能让`rc_2`等待`rc_1`，如果尝试输出`wr`会得到`wr == -1`（在父进程中则应该是等待进程的pid）
