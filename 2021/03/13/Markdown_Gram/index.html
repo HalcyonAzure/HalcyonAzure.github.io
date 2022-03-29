@@ -1,0 +1,572 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="​        通过使用Github Pages + jekyll 的方法也算是搭建了自己的第一篇博客，由于之后post主要都以markdown的文章发布，所以第一篇blog就留给markdown的语法了。 ​        本篇文章参考自Markdown基本语法 - 简书 (jianshu.com)，在学习之后做一个汇总，以便自己后续查看和回忆。  一、标题123456## 这是一级标题,也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown基本语法">
+<meta property="og:url" content="http://example.com/2021/03/13/Markdown_Gram/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="​        通过使用Github Pages + jekyll 的方法也算是搭建了自己的第一篇博客，由于之后post主要都以markdown的文章发布，所以第一篇blog就留给markdown的语法了。 ​        本篇文章参考自Markdown基本语法 - 简书 (jianshu.com)，在学习之后做一个汇总，以便自己后续查看和回忆。  一、标题123456## 这是一级标题,也">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/background-cover.jpg">
+<meta property="article:published_time" content="2021-03-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T08:01:59.524Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/images/background-cover.jpg">
+  
+  
+  <title>Markdown基本语法 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Markdown基本语法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-13 00:00" pubdate>
+        2021年3月13日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Markdown基本语法</h1>
+            
+            <div class="markdown-body">
+              <hr>
+<p>​        通过使用Github Pages + jekyll 的方法也算是搭建了自己的第一篇博客，由于之后post主要都以markdown的文章发布，所以第一篇blog就留给markdown的语法了。</p>
+<p>​        本篇文章参考自<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">Markdown基本语法 - 简书 (jianshu.com)</a>，在学习之后做一个汇总，以便自己后续查看和回忆。</p>
+<hr>
+<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><figure class="highlight markdown"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">## 这是一级标题,也就是字最大的</span><br><span class="hljs-section">## 这是二级标题</span><br><span class="hljs-section">### 这是三级标题</span><br><span class="hljs-section">#### 这是四级标题</span><br><span class="hljs-section">##### 这是五级标题</span><br><span class="hljs-section">###### 这是六级标题</span><br></code></pre></td></tr></table></figure>
+
+<p>其中，不同的效果如下:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br><br><span class="hljs-section">## 一级标题</span><br><br><span class="hljs-section">## 二级标题</span><br><br><span class="hljs-section">### 三级标题</span><br><br><span class="hljs-section">#### 四级标题</span><br><br><span class="hljs-section">##### 五级标题</span><br><br><span class="hljs-section">###### 六级标题</span><br><br>---<br><br><span class="hljs-section">## 二、字体</span><br><br>字体总共有四种排布:<br><br><span class="hljs-bullet">-</span> <span class="hljs-strong">**加粗**</span><br><br>  <span class="hljs-code">`**这里是要加粗的字体**`</span><br><br><span class="hljs-bullet">-</span> <span class="hljs-emphasis">*斜体*</span><br><br>  <span class="hljs-code">``*这里是要倾斜的字体*`</span>`<br><br><span class="hljs-bullet">-</span> <span class="hljs-strong">**<span class="hljs-emphasis">*斜体加粗*</span>**</span>  ~~(就是粗体+斜体啦)~~<br><br>  <span class="hljs-code">``***这里是要斜体并且加粗的字体***`</span>`<br><br><span class="hljs-bullet">-</span> ~~删除线~~<br><br>  <span class="hljs-code">``~~这里是要打删除线的字体~~`</span>`<br><br><span class="hljs-section">## 三、引用</span><br><br>通过使用引用，可以较为美观的引用别人的内容。<br><br>使用示例:<br><br><span class="hljs-code">```markdown</span><br><span class="hljs-code">&gt; 引用</span><br><span class="hljs-code">&gt;&gt; 引用的引用</span><br><span class="hljs-code">&gt;&gt;&gt; 引用的引用的引用</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>引用的引用</p>
+<blockquote>
+<p>引用的引用的引用</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="四、分割线"><a href="#四、分割线" class="headerlink" title="四、分割线"></a>四、分割线</h2><p>分割线有两种实现方式，只要三个，或者三个以上的 ‘-‘ 或者 ‘*’ 就可以达到目的，以下为示例</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">---</span><br>----<br><span class="hljs-strong">**<span class="hljs-emphasis">*</span></span><br><span class="hljs-emphasis"><span class="hljs-strong">*</span>**</span><span class="hljs-emphasis">*</span><br></code></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<!-- markdownlint-disable MD035-->
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h2><p>Markdown中的图片分为三个部分，分别是“图片介绍”，“图床地址”和“图片信息title”</p>
+<ul>
+<li>图片介绍是在图片如果加载失败的时候，将会显示的文字内容</li>
+<li>图床地址用于填写图片存放的位置</li>
+<li>图片信息显示的title，为鼠标移动到图片上面的时候显示的小字内容(可有可无)</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">图片介绍</span>](<span class="hljs-link">图片url &quot;图片信息显示&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>以下为一个示例</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">背景</span>](<span class="hljs-link">/images/background-cover.jpg &quot;背景图片&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>示例:   <img src="/images/background-cover.jpg" srcset="/img/loading.gif" lazyload alt="背景" title="背景图片"></p>
+<hr>
+<h2 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h2><p>超链接的语法和图片的语法很像，唯一的区别就是前面是否有那个感叹号，示例如下:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">[<span class="hljs-string">超链接的内容</span>](<span class="hljs-link">超链接地址 &quot;超链接的title&quot;</span>)<br>[<span class="hljs-string">百度</span>](<span class="hljs-link">http://baidu.com</span>)<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://baidu.com/">百度</a></p>
+<p><a target="_blank" rel="noopener" href="https://halc.top/">HalcyonAzure的Blog</a></p>
+<p>其中Markdown本身的语法目前并不支持超链接打开，需要使用html语言进行修改，由于目前暂时并未学习html有关内容，所以这部分内容直接引用<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">简书</a>中的内容，暂时不研究。</p>
+<blockquote>
+<blockquote>
+<p>注：Markdown本身语法不支持链接在新页面中打开，貌似简书做了处理，是可以的。别的平台可能就不行了，如果想要在新页面中打开的话可以用html语言的a标签代替。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;超链接地址&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span>&gt;</span>超链接名<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>示例<br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.jianshu.com/u/1f5ac0cf6a8b&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span>&gt;</span>简书<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="七、代码"><a href="#七、代码" class="headerlink" title="七、代码"></a>七、代码</h2><p>直接贴语法：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">`单行代码内容`<br><br>​```<br>多行代码内容<br>​```<br></code></pre></td></tr></table></figure>
+
+<p>示例的话上面的很多内容都采用了代码块的方法，所以就不多做展示了</p>
+<h2 id="八、列表"><a href="#八、列表" class="headerlink" title="八、列表"></a>八、列表</h2><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>语法：无序列表使用’-&#x2F;+&#x2F;*’的任意一种符号都可以达到效果</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> 内容<br><span class="hljs-bullet">+</span> 内容<br><span class="hljs-bullet">*</span> 内容<br></code></pre></td></tr></table></figure>
+
+<p>显示效果:</p>
+<!-- markdownlint-disable MD004-->
+<ul>
+<li>内容</li>
+</ul>
+<ul>
+<li>内容</li>
+</ul>
+<ul>
+<li>内容</li>
+</ul>
+<p>如果需要列表嵌套，只需要在回车后重复输入列表(快捷键Tab)即可，示例如下:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> 内容<br><span class="hljs-bullet">    -</span> 内容1<br><span class="hljs-bullet">    -</span> 内容2<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>内容<ul>
+<li>内容1</li>
+<li>内容2</li>
+</ul>
+</li>
+</ul>
+<p>Ps: 在使用Typora编辑列表的时候，如果下一行不再需要列表，只需要通过方向键直接移动光标到下一行即可，如果使用回车来换行的话只会进行列表嵌套的操作</p>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>通过从无序列表进行引申，可以得到有序列表的语法内容:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 内容1<br><span class="hljs-bullet">2.</span> 内容2<br></code></pre></td></tr></table></figure>
+
+<p>示例:</p>
+<ol>
+<li>内容1</li>
+<li>内容2</li>
+</ol>
+<h2 id="表格和流程图"><a href="#表格和流程图" class="headerlink" title="表格和流程图"></a>表格和流程图</h2><p>由于这两部分内容目前还没有遇到使用需求，所以这里同样引用简书内的介绍，等真正有需要和使用的时候再返回这条Blog进行更新和整理</p>
+<blockquote>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>语法：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ruby">&gt;表头|<span class="hljs-params">表头</span>|表头<br>&gt;---|<span class="hljs-params">:--:</span>|---:<br>&gt;内容|<span class="hljs-params">内容</span>|内容<br>&gt;内容|<span class="hljs-params">内容</span>|内容<br><br>&gt;第二行分割表头和内容。<br>&gt;- 有一个就行，为了对齐，多加了几个<br>&gt;文字默认居左<br>&gt;-两边加：表示文字居中<br>&gt;-右边加：表示文字居右<br>&gt;注：原生的语法两边都要用 |<span class="hljs-params"> 包起来。此处省略</span><br></code></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ruby">&gt;姓名|<span class="hljs-params">技能</span>|排行<br>&gt;--|<span class="hljs-params">:--:</span>|--:<br>&gt;刘备|<span class="hljs-params">哭</span>|大哥<br>&gt;关羽|<span class="hljs-params">打</span>|二哥<br>&gt;张飞|<span class="hljs-params">骂</span>|三弟<br></code></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th align="center">技能</th>
+<th align="right">排行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>刘备</td>
+<td align="center">哭</td>
+<td align="right">大哥</td>
+</tr>
+<tr>
+<td>关羽</td>
+<td align="center">打</td>
+<td align="right">二哥</td>
+</tr>
+<tr>
+<td>张飞</td>
+<td align="center">骂</td>
+<td align="right">三弟</td>
+</tr>
+</tbody></table>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>出于Blog的排版问题，只有一个示例</p>
+<div class="code-wrapper"><pre><code class="flow">st=&gt;start: 开始
+op=&gt;operation: My Operation
+cond=&gt;condition: Yes or No?
+e=&gt;end
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+&amp;```
+~~~
+
+</code></pre></div>
+</blockquote>
+<p><del>第一篇Blog就是把别人的东西抄了一遍.jpg</del></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Markdown/">Markdown</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/14/Ubuntu_Vi_ABCD/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Vim不兼容模式光标错误</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

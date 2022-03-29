@@ -1,0 +1,478 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="第七章：进程调度&#x2F;介绍 参数介绍： Response：响应时间，即任务第一次运行的时间 Turnaround: 完成时刻（周转时间），即任务完成那一刻对应的时间 Wait: 等待中时间，即任务处于Ready状态，但当前CPU在执行其他任务的等待时间   执行结果如下 FIFO: 123456789101112131415161718192021ARG policy FIFOARG jli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OSTEP-进程调度方法">
+<meta property="og:url" content="http://example.com/2022/03/28/ostep-homework-4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第七章：进程调度&#x2F;介绍 参数介绍： Response：响应时间，即任务第一次运行的时间 Turnaround: 完成时刻（周转时间），即任务完成那一刻对应的时间 Wait: 等待中时间，即任务处于Ready状态，但当前CPU在执行其他任务的等待时间   执行结果如下 FIFO: 123456789101112131415161718192021ARG policy FIFOARG jli">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T08:01:59.524Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="os">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>OSTEP-进程调度方法 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="OSTEP-进程调度方法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-28 00:00" pubdate>
+        2022年3月28日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">OSTEP-进程调度方法</h1>
+            
+            <div class="markdown-body">
+              <h2 id="第七章：进程调度-x2F-介绍"><a href="#第七章：进程调度-x2F-介绍" class="headerlink" title="第七章：进程调度&#x2F;介绍"></a>第七章：进程调度&#x2F;介绍</h2><blockquote>
+<p>参数介绍：</p>
+<p>Response：响应时间，即任务第一次运行的时间</p>
+<p>Turnaround: 完成时刻（周转时间），即任务完成那一刻对应的时间</p>
+<p>Wait: 等待中时间，即任务处于Ready状态，但当前CPU在执行其他任务的等待时间</p>
+</blockquote>
+<ol>
+<li><p>执行结果如下</p>
+<p>FIFO:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">ARG policy FIFO<br>ARG jlist 200,200,200<br><br>Here is the job list, with the run time of each job:<br>Job 0 ( length = 200.0 )<br>Job 1 ( length = 200.0 )<br>Job 2 ( length = 200.0 )<br><br>**Solutions**<br><br>Execution trace:<br>[ time   0 ] Run job 0 <span class="hljs-keyword">for</span> 200.00 secs ( DONE at 200.00 )<br>[ time 200 ] Run job 1 <span class="hljs-keyword">for</span> 200.00 secs ( DONE at 400.00 )<br>[ time 400 ] Run job 2 <span class="hljs-keyword">for</span> 200.00 secs ( DONE at 600.00 )<br><br>Final statistics:<br>Job   0 -- Response: 0.00  Turnaround 200.00  Wait 0.00<br>Job   1 -- Response: 200.00  Turnaround 400.00  Wait 200.00<br>Job   2 -- Response: 400.00  Turnaround 600.00  Wait 400.00<br><br>Average -- Response: 200.00  Turnaround 400.00  Wait 200.00<br></code></pre></td></tr></table></figure>
+
+<p>同时，对于SJF<code>(Short Job First)</code>，由于每个任务的执行时间相同，所以策略上的处理结果和<code>FIFO</code>相同，不额外列出</p>
+</li>
+<li><p>在按照<code>300</code>,<code>200</code>和<code>100</code>的顺序一次执行任务的时候，对于FIFO策略依次执行，而依据SJF策略，则会先执行时间短的<code>100</code>，依次到最常的<code>300</code>。具体结果如下</p>
+<p> FIFO</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">ARG policy FIFO<br>ARG jlist 300,200,100<br><br>Here is the job list, with the run time of each job:<br>Job 0 ( length = 300.0 )<br>Job 1 ( length = 200.0 )<br>Job 2 ( length = 100.0 )<br><br>**Solutions**<br><br>Execution trace:<br>[ time   0 ] Run job 0 <span class="hljs-keyword">for</span> 300.00 secs ( DONE at 300.00 )<br>[ time 300 ] Run job 1 <span class="hljs-keyword">for</span> 200.00 secs ( DONE at 500.00 )<br>[ time 500 ] Run job 2 <span class="hljs-keyword">for</span> 100.00 secs ( DONE at 600.00 )<br><br>Final statistics:<br>Job   0 -- Response: 0.00  Turnaround 300.00  Wait 0.00<br>Job   1 -- Response: 300.00  Turnaround 500.00  Wait 300.00<br>Job   2 -- Response: 500.00  Turnaround 600.00  Wait 500.00<br><br>Average -- Response: 266.67  Turnaround 466.67  Wait 266.67<br></code></pre></td></tr></table></figure>
+
+<p> SJF</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">ARG policy SJF<br>ARG jlist 300,200,100<br><br>Here is the job list, with the run time of each job:<br>Job 0 ( length = 300.0 )<br>Job 1 ( length = 200.0 )<br>Job 2 ( length = 100.0 )<br><br>**Solutions**<br><br>Execution trace:<br>[ time   0 ] Run job 2 <span class="hljs-keyword">for</span> 100.00 secs ( DONE at 100.00 )<br>[ time 100 ] Run job 1 <span class="hljs-keyword">for</span> 200.00 secs ( DONE at 300.00 )<br>[ time 300 ] Run job 0 <span class="hljs-keyword">for</span> 300.00 secs ( DONE at 600.00 )<br><br>Final statistics:<br>Job   2 -- Response: 0.00  Turnaround 100.00  Wait 0.00<br>Job   1 -- Response: 100.00  Turnaround 300.00  Wait 100.00<br>Job   0 -- Response: 300.00  Turnaround 600.00  Wait 300.00<br><br>Average -- Response: 133.33  Turnaround 333.33  Wait 133.33<br></code></pre></td></tr></table></figure>
+
+<p> SJF的好处在于可以先执行时间短的程序，后执行时间长的程序，同时优化了程序的响应、完成和等待时间。缺点在于因为必须先完整的运行某个任务，后执行下一个任务。如果此时需要高频率执行某任务则无能为力（比如高频率的io输出）</p>
+</li>
+<li><p>采用RR策略，时间片设置为1，依次执行<code>10</code>、<code>20</code>和<code>30</code>有</p>
+<p>RR</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs bash">ARG policy RR<br>ARG jlist 10,20,30<br><br>Here is the job list, with the run time of each job:<br>Job 0 ( length = 10.0 )<br>Job 1 ( length = 20.0 )<br>Job 2 ( length = 30.0 )<br><br><br>** Solutions **<br><br>Execution trace:<br>[ time   0 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   1 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   2 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   3 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   4 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   5 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   6 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   7 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   8 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time   9 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  10 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  11 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  12 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  13 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  14 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  15 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  16 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  17 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  18 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  19 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  20 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  21 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  22 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  23 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  24 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  25 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  26 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  27 ] Run job   0 <span class="hljs-keyword">for</span> 1.00 secs ( DONE at 28.00 )<br>[ time  28 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  29 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  30 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  31 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  32 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  33 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  34 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  35 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  36 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  37 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  38 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  39 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  40 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  41 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  42 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  43 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  44 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  45 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  46 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  47 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  48 ] Run job   1 <span class="hljs-keyword">for</span> 1.00 secs ( DONE at 49.00 )<br>[ time  49 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  50 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  51 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  52 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  53 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  54 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  55 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  56 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  57 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  58 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs<br>[ time  59 ] Run job   2 <span class="hljs-keyword">for</span> 1.00 secs ( DONE at 60.00 )<br><br>Final statistics:<br>Job   0 -- Response: 0.00  Turnaround 28.00  Wait 18.00<br>Job   1 -- Response: 1.00  Turnaround 49.00  Wait 29.00<br>Job   2 -- Response: 2.00  Turnaround 60.00  Wait 30.00<br><br>Average -- Response: 1.00  Turnaround 45.67  Wait 25.67<br></code></pre></td></tr></table></figure>
+
+<p>采用<code>RR</code>策略的时候通过轮转运行三个程序，达到类似”同时”运行程序的效果，缩短了任务的反应时间。缺点是由于轮询过程会同时运行其他任务，因此总体的完成时刻和等待时间都会延长。</p>
+</li>
+<li><p>由于SJF是“短任务优先”的调度策略，因此当到达的任务顺序为先短时间的任务，后长时间任务的时候，SJF和FIFO的周转时间是相同的</p>
+</li>
+<li><p>当RR策略的量子时间大于等于SJF的单个任务最长工作时间时，SJF和RR可以提供相同的响应时间</p>
+</li>
+<li><p>当工作长度逐渐增加的时候，SJF的响应时间会逐渐增加，因为SJF必须要完成一个完整的任务才会运行下一个任务，因此后面的任务响应时间必须等待前一个任务的完成，模拟省略。</p>
+</li>
+<li><p>假定所有任务的长度都大于量子长度，且完成任务的时间都为量子长度的倍数，则可推得以下公式</p>
+<p>$\displaystyle \sum^{N}<em>{i &#x3D; 1}{iQ} \over {N}$ &#x3D; $\displaystyle Q \sum^{N}</em>{i &#x3D; 1}{i} \over {N}$ &#x3D; $\displaystyle \frac{Q * \frac{N(N+1)}{2}}{N}$ &#x3D; $\displaystyle \frac{Q (N+1)}{2}$</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/os/">os</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/29/hello-world/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/25/ostep-homework-3/">
+                        <span class="hidden-mobile">OSTEP-上下文切换开销</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

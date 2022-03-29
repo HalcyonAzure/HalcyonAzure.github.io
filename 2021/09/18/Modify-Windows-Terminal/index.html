@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="参考文章 [How to Install and Update PowerShell 6 - Thomas Maurer] Windows Terminal + oh-my-posh模块美化官方教程集锦以及常见问题_想追头头の疾风的博客  更新PowerShell​    更新PowerShell本身和Windows Terminal没啥直接关系，单纯做个提醒放一个一键更新指令在这里： 1ie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows Terminal个性化配置">
+<meta property="og:url" content="http://example.com/2021/09/18/Modify-Windows-Terminal/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="参考文章 [How to Install and Update PowerShell 6 - Thomas Maurer] Windows Terminal + oh-my-posh模块美化官方教程集锦以及常见问题_想追头头の疾风的博客  更新PowerShell​    更新PowerShell本身和Windows Terminal没啥直接关系，单纯做个提醒放一个一键更新指令在这里： 1ie">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lsky.halc.top/usBZUT.png">
+<meta property="og:image" content="https://lsky.halc.top/2wqSOw.png">
+<meta property="og:image" content="https://lsky.halc.top/N5CHPI.png">
+<meta property="og:image" content="https://lsky.halc.top/oCFtvM.png">
+<meta property="article:published_time" content="2021-09-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T08:01:59.524Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Windows">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lsky.halc.top/usBZUT.png">
+  
+  
+  <title>Windows Terminal个性化配置 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Windows Terminal个性化配置">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-18 00:00" pubdate>
+        2021年9月18日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Windows Terminal个性化配置</h1>
+            
+            <div class="markdown-body">
+              <!-- markdownlint-disable MD033-->
+
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/windows-powershell/how-to-install-and-update-powershell-6-one-liner/m-p/364948">[How to Install and Update PowerShell 6 - Thomas Maurer]</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44490152/article/details/113854767">Windows Terminal + oh-my-posh模块美化官方教程集锦以及常见问题_想追头头の疾风的博客</a></li>
+</ul>
+<h2 id="更新PowerShell"><a href="#更新PowerShell" class="headerlink" title="更新PowerShell"></a>更新PowerShell</h2><p>​    更新PowerShell本身和Windows Terminal没啥直接关系，单纯做个提醒放一个一键更新指令在这里：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">iex</span> <span class="hljs-string">&quot;&amp; &#123; <span class="hljs-variable">$</span>(irm https://aka.ms/install-powershell.ps1) &#125; -UseMSI&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>这条命令的作用是安装最新版本的PowerShell，截至发博客为止可用于安装<code>PowerShell 7</code></p>
+<h2 id="Windows-Terminal的安装-amp-美化"><a href="#Windows-Terminal的安装-amp-美化" class="headerlink" title="Windows Terminal的安装&amp;美化"></a>Windows Terminal的安装&amp;美化</h2><h3 id="Windows-Terminal安装"><a href="#Windows-Terminal安装" class="headerlink" title="Windows Terminal安装"></a>Windows Terminal安装</h3><ol>
+<li>打开Microsoft Store</li>
+<li>搜索<code>Windows Terminal</code></li>
+<li>安装</li>
+</ol>
+<h2 id="Windows-Terminal的配置和使用"><a href="#Windows-Terminal的配置和使用" class="headerlink" title="Windows Terminal的配置和使用"></a>Windows Terminal的配置和使用</h2><h3 id="Windows-Terminal的使用"><a href="#Windows-Terminal的使用" class="headerlink" title="Windows Terminal的使用"></a>Windows Terminal的使用</h3><ul>
+<li>在<code>Win+R</code>中输入<code>wt</code>回车即可呼出<code>Windows Terminal</code></li>
+<li><code>Windows Terminal</code>中链接了一些Linux下可用的指令，诸如<code>ls</code>等</li>
+<li>如果要在<code>Windows Terminal</code>下使用<code>vim</code>编辑器，只需要在安装了<code>Git</code>的前提下将<code>C:\Program Files\Git\usr\bin</code>设置为环境变量即可。(如果<code>Git</code>安装在其他目录下进行相对应的调整就好，设置好了以后重启一次<code>Windows Terminal</code>即可)</li>
+</ul>
+<h3 id="Windows-Terminal的个性化配置"><a href="#Windows-Terminal的个性化配置" class="headerlink" title="Windows Terminal的个性化配置"></a>Windows Terminal的个性化配置</h3><blockquote>
+<p>如未特别说明，接下来将用<code>wt</code>作为<code>Windows Terminal</code>的简写</p>
+</blockquote>
+<p>注：本文个性化配置包括：</p>
+<ul>
+<li><p>修改<code>Windows Terminal</code>的配色</p>
+</li>
+<li><p>安装<code>posh-git</code>和<code>oh-my-posh</code></p>
+</li>
+<li><p>安装<code>Nerd Font</code>字体</p>
+</li>
+<li><p>配置<code>oh-my-posh</code>来修改<code>wt</code>的配色和样式</p>
+</li>
+</ul>
+<p>不包括（以下设置在最新版的<code>wt</code>设置中已经包含）：</p>
+<ul>
+<li>毛玻璃和背景设置</li>
+<li>光标形状、大小修改等</li>
+</ul>
+<h4 id="配色修改"><a href="#配色修改" class="headerlink" title="配色修改"></a>配色修改</h4><ol>
+<li><p>在<a target="_blank" rel="noopener" href="https://github.com/mbadolato/iTerm2-Color-Schemes">mbadolato&#x2F;iTerm2-Color-Schemes</a>下滑，找到自己喜欢的配色的截图，在截图的左上方会有该配色的代号。</p>
+</li>
+<li><p>在<a target="_blank" rel="noopener" href="https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/windowsterminal">iTerm2-Color-Schemes&#x2F;windowsterminal</a>上找到配色对应的json文件并复制所有的内容。</p>
+</li>
+<li><p>在<code>wt</code>中打开设置，以下图为例：</p>
+<img src="https://lsky.halc.top/usBZUT.png" srcset="/img/loading.gif" lazyload alt="打开设置.png" style="zoom: 33%;" />
+</li>
+<li><p>打开JSON设置，以图下为例：</p>
+<img src="https://lsky.halc.top/2wqSOw.png" srcset="/img/loading.gif" lazyload alt="打开JSON文件.png" style="zoom: 25%;" />
+</li>
+<li><p>将刚刚复制的代码粘贴到有<code>scheme</code>字样的配置目录下，以下图为例：</p>
+<img src="https://lsky.halc.top/N5CHPI.png" srcset="/img/loading.gif" lazyload alt="添加主题.png" style="zoom: 33%;" />
+</li>
+<li><p>保存后，回到<code>wt</code>的设置，选择平时主要使用的窗口界面（e.g.<code>PowerShell</code>）然后选择外观，然后选择自己添加的主题，以下图为例：</p>
+<img src="https://lsky.halc.top/oCFtvM.png" srcset="/img/loading.gif" lazyload alt="修改config" style="zoom: 25%;" /></li>
+</ol>
+<h4 id="安装-Nerd-Fonts-字体"><a href="#安装-Nerd-Fonts-字体" class="headerlink" title="安装 Nerd-Fonts 字体"></a>安装 Nerd-Fonts 字体</h4><blockquote>
+<p>教程以<code>Hack NF</code>字体为例，如果需要使用其他字体请自行选择。</p>
+</blockquote>
+<ol>
+<li><p>在这个页面下载的<code>Hack.zip</code>：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ryanoasis/nerd-fonts">ryanoasis&#x2F;nerd-fonts</a></p>
+</li>
+<li><p>解压<code>Hack.zip</code>，然后全选所有文件，右键点击安装</p>
+</li>
+<li><p>在<code>wt</code>中需要的终端，按<strong>配色修改</strong>第6步修改字体为<code>Hack NF</code>即可。</p>
+</li>
+</ol>
+<h4 id="安装post-git和oh-my-posh"><a href="#安装post-git和oh-my-posh" class="headerlink" title="安装post-git和oh-my-posh"></a>安装post-git和oh-my-posh</h4><blockquote>
+<p>以下教程需要电脑上安装了Git才能使用</p>
+</blockquote>
+<ol>
+<li><p>使用<code>PowerShell</code>安装<code>post-git</code>和<code>oh-my-posh</code></p>
+<p>指给当前用户(非Administrator)安装：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Install-Module</span> posh<span class="hljs-literal">-git</span> <span class="hljs-literal">-Scope</span> CurrentUser<br><span class="hljs-built_in">Install-Module</span> <span class="hljs-built_in">oh</span><span class="hljs-literal">-my-posh</span> <span class="hljs-literal">-Scope</span> CurrentUser<br></code></pre></td></tr></table></figure>
+
+<p>给所有用户安装：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Install-Module</span> posh<span class="hljs-literal">-git</span> <span class="hljs-literal">-Scope</span> AllUsers<br><span class="hljs-built_in">Install-Module</span> <span class="hljs-built_in">oh</span><span class="hljs-literal">-my-posh</span> <span class="hljs-literal">-Scope</span> AllUsers<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>列出所有可用主题</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Get-PoshThemes</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>找到自己喜欢的主题，然后使用指令预览（这里以spaceship为例）：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-PoshPrompt</span> <span class="hljs-literal">-Theme</span> spaceship<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在预览结束以后，为了让主题每次启动都生效，需要创建一个脚本。</p>
+<ol>
+<li><p>输入以下指令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd ~<br>vim $profile<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>按下按键i，进入插入模式，然后填入以下内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">Import-Module posh-git<br>Import-Module oh-my-posh<br>Set-PoshPrompt -Theme spaceship #[这里填你选的主题名字，用spaceship做示范]<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>键盘键入<code>:wq</code>然后回车，代表保存并退出。</p>
+</li>
+</ol>
+</li>
+<li><p>重新启动<code>wt</code>即可看到自己个性化配置的<code>Windows Terminal</code>界面了。</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Windows/">Windows</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/03/Change-Font-Windows/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Windows字体切换</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/16/FireWall-WSL/">
+                        <span class="hidden-mobile">WSL代理-尝试一</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

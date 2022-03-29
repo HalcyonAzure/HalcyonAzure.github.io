@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="该问题为OSTEP第五章进程API上的一个问题，在搜Stack overflow的时候发现一个很好记的答案，单独写一个博客记录一下 参考回答 what-are-the-different-versions-of-exec-used-for-in-c-and-c  翻译摘抄对于exec()函数，在C&#x2F;C++中有以下几个不同的版本 1234567891011121314#include &amp;l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区分不同exec()形式">
+<meta property="og:url" content="http://example.com/2022/03/19/exec-in-linux/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="该问题为OSTEP第五章进程API上的一个问题，在搜Stack overflow的时候发现一个很好记的答案，单独写一个博客记录一下 参考回答 what-are-the-different-versions-of-exec-used-for-in-c-and-c  翻译摘抄对于exec()函数，在C&#x2F;C++中有以下几个不同的版本 1234567891011121314#include &amp;l">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T08:01:59.524Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="os">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>区分不同exec()形式 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="区分不同exec()形式">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-19 00:00" pubdate>
+        2022年3月19日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">区分不同exec()形式</h1>
+            
+            <div class="markdown-body">
+              <p>该问题为<code>OSTEP</code>第五章<code>进程API</code>上的一个问题，在搜<code>Stack overflow</code>的时候发现一个很好记的答案，单独写一个博客记录一下</p>
+<h2 id="参考回答"><a href="#参考回答" class="headerlink" title="参考回答"></a>参考回答</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/a/5769803">what-are-the-different-versions-of-exec-used-for-in-c-and-c</a></li>
+</ol>
+<h2 id="翻译摘抄"><a href="#翻译摘抄" class="headerlink" title="翻译摘抄"></a>翻译摘抄</h2><p>对于<code>exec()</code>函数，在C&#x2F;C++中有以下几个不同的版本</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><br><span class="hljs-keyword">extern</span> <span class="hljs-type">char</span> **environ;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">execl</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *pathname, <span class="hljs-type">const</span> <span class="hljs-type">char</span> *arg, ...</span></span><br><span class="hljs-params"><span class="hljs-function">                       <span class="hljs-comment">/* (char  *) NULL */</span>)</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">execlp</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *file, <span class="hljs-type">const</span> <span class="hljs-type">char</span> *arg, ...</span></span><br><span class="hljs-params"><span class="hljs-function">                       <span class="hljs-comment">/* (char  *) NULL */</span>)</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">execle</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *pathname, <span class="hljs-type">const</span> <span class="hljs-type">char</span> *arg, ...</span></span><br><span class="hljs-params"><span class="hljs-function">                       <span class="hljs-comment">/*, (char *) NULL, char *const envp[] */</span>)</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">execv</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *pathname, <span class="hljs-type">char</span> *<span class="hljs-type">const</span> argv[])</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">execvp</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *file, <span class="hljs-type">char</span> *<span class="hljs-type">const</span> argv[])</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">execvpe</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *file, <span class="hljs-type">char</span> *<span class="hljs-type">const</span> argv[],</span></span><br><span class="hljs-params"><span class="hljs-function">                       <span class="hljs-type">char</span> *<span class="hljs-type">const</span> envp[])</span></span>;<br></code></pre></td></tr></table></figure>
+
+<p>其中不同版本的区别通过函数名可以分为以下几个大类：</p>
+<h3 id="L和V"><a href="#L和V" class="headerlink" title="L和V"></a>L和V</h3><ul>
+<li><p>L：L在这里指的是<code>list</code>，执行的时候的将参数以类似如下方式传入：</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">execl</span>(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *pathname, <span class="hljs-type">const</span> <span class="hljs-type">char</span> *arg, ...)<br></code></pre></td></tr></table></figure>
+
+<p>  其中省略号代表了后续分别独立传入的参数，其中，第一个参数应是正在执行的文件关联的文件名，并且参数以<code>空字符NULL</code>作为结尾的判定。</p>
+</li>
+<li><p>V: V在这里指的是<code>vector</code>，执行的时候以<code>char*</code>的形式传入执行指令</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">execv</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *pathname, <span class="hljs-type">char</span> *<span class="hljs-type">const</span> argv[])</span></span>;<br></code></pre></td></tr></table></figure>
+
+<p>  对于不确定传入参数的个数的时候，可以使用<code>vector</code>来执行程序。使用带<code>v</code>的函数的时候，首先传入的第一个<code>pathname</code>是指向可执行文件的路径，后面传入的<code>argv[]</code>中，第一个<code>argv</code>的位置上按习惯为可执行文件的名字，后面<code>argv+1</code>等参数则是实际需要调用的可执行文件的参数、</p>
+</li>
+</ul>
+<p>有的命令执行的时候，我们并不知道要传入的参数有几个，而有的命令则必须要一定数量的参数才能运行。通过分别调用带<code>l</code>或带<code>v</code>的函数，在不同的情况下执行某些特定命令很有用</p>
+<h3 id="E"><a href="#E" class="headerlink" title="E"></a>E</h3><p>E在这里指代的是<code>Environment</code>，在结尾带<code>e</code>的<code>exec()</code>调用的时候的环境变量<code>env</code>与父进程的<code>env</code>并非一定相同，通过带<code>e</code>的函数即可在调用<code>exec()</code>的同时传入一个<code>env</code>供子进程使用</p>
+<h3 id="P"><a href="#P" class="headerlink" title="P"></a>P</h3><p>P在这里指的是系统环境变量中的<code>PATH</code>，含有<code>p</code>的<code>exec()</code>在调用的时候会在系统变量的<code>PATH</code>当中寻找对应的可执行文件，而缺少<code>p</code>的<code>exec()</code>在执行的时候，如果在当前目录下没有对应的文件名字，则需要传入目标可执行文件的绝对或相对路径。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/os/">os</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/23/wait-in-linux/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">wait()和waitpid()调用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/18/SignIn-Ncu/">
+                        <span class="hidden-mobile">github actions打卡</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

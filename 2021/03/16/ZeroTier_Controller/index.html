@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本来的理解: 在使用ZeroTier的时候经常会出现穿透失败，或者穿透延迟过大但是中转服务器不好用的情况，之前有参考过网上的教程来通过一台国内的VPS搭建自己的MOON节点来达到加速的目的，但是最后的效果不尽人意，而且还存在安卓端添加mood节点并不轻松的问题，所以在这里采取直接通过key-networks&#x2F;ztncui: ZeroTier network controller UI搭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建ZeroTier网络控制台">
+<meta property="og:url" content="http://example.com/2021/03/16/ZeroTier_Controller/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本来的理解: 在使用ZeroTier的时候经常会出现穿透失败，或者穿透延迟过大但是中转服务器不好用的情况，之前有参考过网上的教程来通过一台国内的VPS搭建自己的MOON节点来达到加速的目的，但是最后的效果不尽人意，而且还存在安卓端添加mood节点并不轻松的问题，所以在这里采取直接通过key-networks&#x2F;ztncui: ZeroTier network controller UI搭">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/03/images/ztnui_1.png">
+<meta property="og:image" content="http://example.com/2021/03/images/ztnui_2.png">
+<meta property="article:published_time" content="2021-03-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T08:01:59.524Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="ZeroTier">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2021/03/images/ztnui_1.png">
+  
+  
+  <title>搭建ZeroTier网络控制台 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="搭建ZeroTier网络控制台">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-16 00:00" pubdate>
+        2021年3月16日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">搭建ZeroTier网络控制台</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p><strong>本来的理解</strong>: 在使用ZeroTier的时候经常会出现穿透失败，或者穿透延迟过大但是中转服务器不好用的情况，之前有参考过网上的教程来通过一台国内的VPS搭建自己的MOON节点来达到加速的目的，但是最后的效果不尽人意，而且还存在安卓端添加mood节点并不轻松的问题，所以在这里采取直接通过<a target="_blank" rel="noopener" href="https://github.com/key-networks/ztncui">key-networks&#x2F;ztncui: ZeroTier network controller UI</a>搭建自己的ZeroTier根服务器</p>
+</blockquote>
+<p>​    最近在使用<code>zerotier-cli listpeers</code>指令的时候发现设置的控制器是一个<code>LEAF</code>而不是本来预期的<code>PLANT</code>，在查阅了一部分资料之后发现如果想要加速网络的话目前比较好的方便还是<code>MOON</code>服务器进行中转，详情参考另外一篇<code>ZeroTier下Moon服务器的搭建</code>。</p>
+<h2 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h2><ol>
+<li><p>准备好一台在国内，至少开放端口3443端口的服务器（暂未测试对其他端口是否有需求）</p>
+</li>
+<li><p>在服务器内安装ZeroTier，以下为一键安装脚本</p>
+<p><code>curl -s https://install.zerotier.com | sudo bash</code></p>
+<p>如果服务器有安装GPG，则需要多几个步骤</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">curl -s <span class="hljs-string">&#x27;https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg&#x27;</span> | gpg --import &amp;&amp; \<br><span class="hljs-keyword">if</span> z=$(curl -s <span class="hljs-string">&#x27;https://install.zerotier.com/&#x27;</span> | gpg); <span class="hljs-keyword">then</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$z</span>&quot;</span> | sudo bash; <span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="部署ztncui"><a href="#部署ztncui" class="headerlink" title="部署ztncui"></a>部署ztncui</h2><h3 id="RPM-installation-on-EL7"><a href="#RPM-installation-on-EL7" class="headerlink" title="RPM installation on EL7"></a>RPM installation on EL7</h3><ol>
+<li><p><code>sudo yum install https://download.key-networks.com/el7/ztncui/1/ztncui-release-1-1.noarch.rpm -y</code></p>
+</li>
+<li><p><code>sudo yum install ztncui -y</code></p>
+</li>
+<li><p>(可选择)：添加服务器自己的TLS&#x2F;SSL证书，或者添加服务器自认证的证书 - <strong>后文有教程</strong></p>
+</li>
+<li><p>开放服务器的3443端口(已开放可忽略)</p>
+</li>
+<li><p><code>sudo sh -c &quot;echo &#39;HTTPS_PORT=3443&#39; &gt; /opt/key-networks/ztncui/.env&quot;</code></p>
+</li>
+<li><p><code>sudo sh -c &quot;echo &#39;NODE_ENV=production&#39; &gt;&gt; /opt/key-networks/ztncui/.env&quot;</code></p>
+</li>
+<li><p><code>sudo systemctl restart ztncui</code></p>
+</li>
+<li><p>通过HTTPS来在服务器的3443端口访问控制界面，比如</p>
+<p><code>e.g. https://my.network.controller:3443</code></p>
+</li>
+<li><p>通过默认的账号<code>admin</code>和密码<code>password</code>.</p>
+</li>
+</ol>
+<h3 id="DEB-installation-on-Debian-x2F-Ubuntu"><a href="#DEB-installation-on-Debian-x2F-Ubuntu" class="headerlink" title="DEB installation on Debian&#x2F;Ubuntu"></a>DEB installation on Debian&#x2F;Ubuntu</h3><ol>
+<li><p><code>curl -O https://s3-us-west-1.amazonaws.com/key-networks/deb/ztncui/1/x86_64/ztncui_0.7.1_amd64.deb</code></p>
+</li>
+<li><p><code>sudo apt-get install ./ztncui_0.7.1_amd64.deb</code></p>
+</li>
+<li><p>(可选择)：添加服务器自己的TLS&#x2F;SSL证书，或者添加服务器自认证的证书 - <strong>后文有教程</strong></p>
+</li>
+<li><p>开放服务器的3443端口(已开放可忽略)</p>
+</li>
+<li><p><code>sudo sh -c &quot;echo &#39;HTTPS_PORT=3443&#39; &gt; /opt/key-networks/ztncui/.env&quot;</code></p>
+</li>
+<li><p><code>sudo sh -c &quot;echo &#39;NODE_ENV=production&#39; &gt;&gt; /opt/key-networks/ztncui/.env&quot;</code></p>
+</li>
+<li><p><code>sudo systemctl restart ztncui</code></p>
+</li>
+<li><p>通过HTTPS来在服务器的3443端口访问控制界面，比如</p>
+<p><code>e.g. https://my.network.controller:3443</code></p>
+</li>
+<li><p>通过默认的账号<code>admin</code>和密码<code>password</code>.</p>
+</li>
+</ol>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><ol>
+<li><p>如果要添加额外的监听端口，只需要在<code>/opt/key-network/ztncui</code>下面添加一个<code>.env</code>文件，其中附带一行</p>
+<p><code>HTTPS_PORT=3443</code></p>
+<p>或者任意一个大于1024的端口即可。</p>
+</li>
+<li><p>如果存在<code>.env</code>文件来指向特定的一个端口，那么ztncui将会在所有的端口监听网络，如果希望限制一个特定的IP进行监听的话，只需要在<code>.env</code>文件中再添加一行</p>
+<p><code>HTTPS_HOST=12.34.56.78</code></p>
+<p>来设置自己制定的IP或者域名即可。</p>
+</li>
+</ol>
+<h2 id="添加Self-signed-Certificate"><a href="#添加Self-signed-Certificate" class="headerlink" title="添加Self-signed Certificate"></a>添加Self-signed Certificate</h2><blockquote>
+<p>这种方法添加的证书会存在浏览器警告的问题，不过由于是自己使用，平时也不会一直盯着控制界面，所以影响应该不会很大，如果有共用或者对安全有需求建议自行添加</p>
+</blockquote>
+<p>以下为无脑脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo -i<br><span class="hljs-built_in">cd</span> /opt/key-networks/ztncui/etc/tls<br><span class="hljs-built_in">rm</span> -f privkey.pem fullchain.pem<br>openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privkey.pem -out fullchain.pem<br><span class="hljs-built_in">chown</span> ztncui.ztncui *.pem<br><span class="hljs-built_in">chmod</span> 600 privkey.pem<br></code></pre></td></tr></table></figure>
+
+<h2 id="配置ztnui"><a href="#配置ztnui" class="headerlink" title="配置ztnui"></a>配置ztnui</h2><p>由于ztnui是自己搭建的一个ZeroTier服务器，所以并没有预先设置好的DHCP分配，需要自己设置分配范围。如果需要添加一个新的网络，在使用账号密码登入以后，点击<code>Add network</code>就可以添加一个自己的虚拟局域网络</p>
+<ol>
+<li><p>点击Add network</p>
+</li>
+<li><p>设置好network的名字并create</p>
+</li>
+<li><p>如果需要设置”隐私”与否，在Private中设置即可，这里稍作翻译即可看懂，所以不多解释</p>
+</li>
+<li><p>点击如下图所示的Easy Setup来快速完成一个IPv4的DHCP分配</p>
+<p><img src="/2021/03/images/ztnui_1.png" srcset="/img/loading.gif" lazyload alt="ESETUP" title="DHCP分配"></p>
+</li>
+<li><p>如下图所示填入对应信息</p>
+<p><img src="/2021/03/images/ztnui_2.png" srcset="/img/loading.gif" lazyload alt="IPPOOL" title="IP_POOL"></p>
+<p>以下为一个例子:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">网关:192.168.192.0/24<br>起始IP:192.168.192.1<br>终止IP:192.168.192.254<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>然后点submit即可快速创建，也可以通过generate network address的方式自动随机填入。</p>
+</li>
+<li><p>如果需要设置NAT路由，则只需要在Routes下进行配置和添加即可。</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/ZeroTier/">ZeroTier</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/17/Ubuntu_Disk/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">拓展Ubuntu服务器LVM分区</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/15/C++quicksort/">
+                        <span class="hidden-mobile">快速排序</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
