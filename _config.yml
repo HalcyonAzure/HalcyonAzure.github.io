@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: Azure Blog
+subtitle: '青空域'
+description: 'Tech Learning HomeLab Blog'
 keywords:
-author: John Doe
+author: HalcyonAzure
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://www.azsyc.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -54,7 +54,7 @@ prismjs:
   enable: false
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: '    '
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
