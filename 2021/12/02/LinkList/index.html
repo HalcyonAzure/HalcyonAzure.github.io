@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="以下内容仅为刷题总结，只记录目前遇到过的情况，如果后面遇到了更多可能性再总结  链表定义在链式存储当中，对于节点是使用指针指向的方式进行数据的存储，其结点定义类似如下形式： 123456struct LinkNode &amp;#123;    int val;    LinkNode *next;    LinkNode() &amp;#123;&amp;#125;    LinkNode(int x) : val(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表">
+<meta property="og:url" content="http://example.com/2021/12/02/LinkList/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以下内容仅为刷题总结，只记录目前遇到过的情况，如果后面遇到了更多可能性再总结  链表定义在链式存储当中，对于节点是使用指针指向的方式进行数据的存储，其结点定义类似如下形式： 123456struct LinkNode &amp;#123;    int val;    LinkNode *next;    LinkNode() &amp;#123;&amp;#125;    LinkNode(int x) : val(">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T08:01:59.524Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Algorithm">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>链表 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="链表">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-02 00:00" pubdate>
+        2021年12月2日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      17 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">链表</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>以下内容仅为刷题总结，只记录目前遇到过的情况，如果后面遇到了更多可能性再总结</p>
+</blockquote>
+<h2 id="链表定义"><a href="#链表定义" class="headerlink" title="链表定义"></a>链表定义</h2><p>在链式存储当中，对于节点是使用指针指向的方式进行数据的存储，其结点定义类似如下形式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">LinkNode</span> &#123;<br>    <span class="hljs-type">int</span> val;<br>    LinkNode *next;<br>    <span class="hljs-built_in">LinkNode</span>() &#123;&#125;<br>    <span class="hljs-built_in">LinkNode</span>(<span class="hljs-type">int</span> x) : <span class="hljs-built_in">val</span>(x), <span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>) &#123;&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>链表的好处是在添加或者删除特定节点的时候时间复杂度比顺序存储要小。在经常需要删除和添加操作节点的时候，通过直接修改节点的指针，可以快捷的对节点进行对应操作。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>链表划分为三个部分，头+中间的数据节点+尾。</p>
+<h3 id="头结点"><a href="#头结点" class="headerlink" title="头结点"></a>头结点</h3><p>其中头节点有两种常见的处理方式，一种是通过一个虚拟的<code>dummyhead</code>来当作头结点，之后才是真实的数据节点。这样的好处是可以在对实际含有意义的头节点进行操作的时候，不需要有额外的特判就可以完成，通过增加一个头结点在部分题目中有的时候可以有很好的效果。</p>
+<h3 id="尾节点"><a href="#尾节点" class="headerlink" title="尾节点"></a>尾节点</h3><p>尾节点和头结点一样，也有实际意义上存在的数据节点和最后指向的一个尾巴节点，不过根据节点的定义来看，可以知道尾节点后面通常都跟有一个无意义的<code>nullptr</code>。在有的时候需要对尾节点进行处理的时候，增加一个虚拟的<code>dummytail</code>也许也能起到很好的效果。*(p.s. 比如在写双向链表的时候)*</p>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>创建链表的时候，通常会创建一个指针节点来表示整个链表的头节点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">LinkNode *ListA = <span class="hljs-keyword">new</span> <span class="hljs-built_in">LinkNode</span>();<br></code></pre></td></tr></table></figure>
+
+<p>以上代码的含义即为创建一个LinkNode的节点，同时创建一个叫做<code>List</code></p>
+<p><code>A</code>的指针，指向的是这个节点的内存。</p>
+<p>而在对单向链表的进行操作的时候，如果我们移动了链头，很多时候意味着操作都是不可逆的。因此如果需要对链表中某个特定节点进行操作的时候，往往都会创建一个指向需要节点的指针来进行单独操作，操作完毕后将指针释放即可。</p>
+<p>以下举例，阐明节点和节点指针之间的关系：*(感觉有点废话)*</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp">LinkNode *cur = <span class="hljs-keyword">new</span> <span class="hljs-built_in">LinkNode</span>();  <span class="hljs-comment">// 创建一个cur指针</span><br>LinkNode *A = <span class="hljs-keyword">new</span> <span class="hljs-built_in">LinkNode</span>(<span class="hljs-number">114</span>);  <span class="hljs-comment">// 创建节点A</span><br>LinkNode *B = <span class="hljs-keyword">new</span> <span class="hljs-built_in">LinkNode</span>(<span class="hljs-number">115</span>);  <span class="hljs-comment">// 创建节点B</span><br>cout&lt;&lt;<span class="hljs-string">&quot;cur addr:&quot;</span>&lt;&lt;cur&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;<span class="hljs-string">&quot;A addr:&quot;</span>&lt;&lt;A&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;<span class="hljs-string">&quot;B addr:&quot;</span>&lt;&lt;B&lt;&lt;endl;<br><span class="hljs-comment">// 此时cur、A和B表示的内存地址</span><br>cur = A;<br>LinkNode *tmp = A;<br>cout&lt;&lt;tmp&lt;&lt;endl;<br><span class="hljs-comment">// 让cur指向A之后cur的内存地址</span><br>A = B;  <span class="hljs-comment">// 让A指向B</span><br><span class="hljs-comment">// delete tmp;  // 是否删除原本A代表的节点对应内存</span><br>cout&lt;&lt;<span class="hljs-string">&quot;cur addr:&quot;</span>&lt;&lt;cur&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;<span class="hljs-string">&quot;A addr:&quot;</span>&lt;&lt;A&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;<span class="hljs-string">&quot;B addr:&quot;</span>&lt;&lt;B&lt;&lt;endl;<br>cout&lt;&lt;cur-&gt;val&lt;&lt;endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+
+<p>在注释了<code>delete tmp</code>的时候，最后输出的<code>cur-&gt;val</code>会依旧是114这个A曾经的值，而如果执行了对应的<code>delete</code>操作，由于原本A对应内存上的结构体被释放了，所以这个时候<code>cur</code>就没有指向一个有效的节点。</p>
+<h2 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h2><h3 id="链表的终止条件"><a href="#链表的终止条件" class="headerlink" title="链表的终止条件"></a>链表的终止条件</h3><p>常用的终止条件有三种：</p>
+<ol>
+<li><code>cur != nullptr</code> 指针会停留在<code>nullptr</code>的尾节点上</li>
+<li><code>cur-&gt;next != nullptr</code> 指针会停留在最后一个有效节点上</li>
+<li><code>cur != nullptr &amp;&amp; cur-&gt;next != nullptr</code>多用于快慢指针，用于判断快指针是否到队尾。之所以两种情况都判断为循环跳出的条件原因：由于<code>nullptr</code>本身相当于最后一个有效节点的附加尾巴。类比于线段上有区间(a, b)和区间[a,b]，快指针的目的是为了判断长度，而这两种区间长度都是<code>b - a</code>，只是对于第一种情况(a, b)如果不将b节点本身纳入有效节点则会出现区间长度变为<code>a -&gt; (b - 1)</code>的情况。</li>
+</ol>
+<p>对于第三种终止条件，还可以类比为：</p>
+<ul>
+<li><code>cur == nullptr</code>终止的情况就是区间(a, b)，此时cur在走到b的时候快指针已经越界，刚好碰壁</li>
+<li><code>cur-&gt;next == nullptr</code>终止的情况就是区间[a, b]，此时cur在走到b时，刚好到达边界，也同样碰壁。</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Algorithm/">Algorithm</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/02/Fast_and_Slow_Cur/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">快慢指针</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/15/WSL_Windows_DNS/">
+                        <span class="hidden-mobile">WSL代理-尝试二</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
