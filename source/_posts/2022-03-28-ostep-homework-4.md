@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "OSTEP-进程调度方法"
-mathjax: true
+math: true
 tag: os
 ---
 
@@ -196,5 +196,6 @@ tag: os
 6. 当工作长度逐渐增加的时候，SJF的响应时间会逐渐增加，因为SJF必须要完成一个完整的任务才会运行下一个任务，因此后面的任务响应时间必须等待前一个任务的完成，模拟省略。
 
 7. 假定所有任务的长度都大于量子长度，且完成任务的时间都为量子长度的倍数，则可推得以下公式
-
-   $\displaystyle \sum^{N}_{i = 1}{iQ} \over {N}$ = $\displaystyle Q \sum^{N}_{i = 1}{i} \over {N}$ = $\displaystyle \frac{Q * \frac{N(N+1)}{2}}{N}$ = $\displaystyle \frac{Q (N+1)}{2}$
+$$
+   \frac{\sum_{i=1}^{N} i Q}{N}=\frac{Q \sum_{i=1}^{N} i}{N}=\frac{Q * \frac{N(N+1)}{2}}{N}=\frac{Q(N+1)}{2}
+$$
