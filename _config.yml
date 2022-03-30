@@ -106,3 +106,7 @@ deploy:
   repo: https://github.com/HalcyonAzure/hexo-blog.git
   branch: master
   message: ":rocket: Deployed by Hexo"
+
+# Plugins
+# hexo-all-minifier Docs: https://github.com/chenzhutian/hexo-all-minifier
+all_minifier: true
