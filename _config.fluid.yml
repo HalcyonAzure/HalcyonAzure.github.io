@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: /img/favicon.png
+favicon: /img/favicon-pic.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /img/favicon.png
+apple_touch_icon: /img/favicon-pic.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -444,7 +444,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/main-page.jpg
+  banner_img: /img/main-page.png
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -516,7 +516,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/post.jpg
+  banner_img: /img/post.png
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -810,7 +810,7 @@ cusdis:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/archive.jpg
+  banner_img: /img/archive.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -822,7 +822,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/category.jpg
+  banner_img: /img/category.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -852,7 +852,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/tags.jpg
+  banner_img: /img/tags.png
   banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle:
@@ -870,7 +870,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/about.jpg
+  banner_img: /img/about.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -884,7 +884,7 @@ about:
     - { class: "iconfont icon-telegram-fill", link: "https://t.me/halcyonazure", tip: "Telegram" }
     - { class: "iconfont icon-docker", link: "https://hub.docker.com/u/halcyonazure", tip: "Docker" }
     - { class: "iconfont icon-twitter-fill", link: "https://twitter.com/halcyon_azure", tip: "Twitter" }
-    # - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
+    # - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon-pic.png" }
 
 
 #---------------------------
@@ -895,7 +895,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/default.png
+  banner_img: /img/default-pic.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -906,7 +906,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default-pic.png
   banner_img_height: 85
   banner_mask_alpha: 0.3
   subtitle: "Page not found"
@@ -918,7 +918,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default-pic.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -952,13 +952,13 @@ links:
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
-  onerror_avatar: /img/avatar.png
+  onerror_avatar: /img/avatar-pic.png
 
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Fluid</li><li>简介：Fluid 主题官方博客</li><li>链接：https://hexo.fluid-dev.com</li><li>图片：https://hexo.fluid-dev.com/img/favicon.png</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Fluid</li><li>简介：Fluid 主题官方博客</li><li>链接：https://hexo.fluid-dev.com</li><li>图片：https://hexo.fluid-dev.com/img/favicon-pic.png</li></ul>'
 
   # 评论插件
   # Comment plugin
