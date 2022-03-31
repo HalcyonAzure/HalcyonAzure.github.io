@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Linux配置网络唤醒"
+date: 2021-04-04
 categories: 小技巧
 tags:  Linux
 ---

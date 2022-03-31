@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Nginx配置CDN回源重定向解决"
+date: 2021-04-20
 categories: 小技巧 
 tags:  Nginx
 ---

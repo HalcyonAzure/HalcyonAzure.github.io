@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "fdisk分区教程"
+date: 2021-03-25
 categories: 小技巧
 tags:  OpenWRT
 ---

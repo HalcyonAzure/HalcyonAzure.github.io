@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "[备忘]Ubuntu禁用Suspend"
+date: 2021-03-14
 categories: 小技巧
 tags: Ubuntu
 ---

@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Windows计算文件Hash"
+date: 2021-03-17
 categories: 小技巧
 tags:  Windows
 ---

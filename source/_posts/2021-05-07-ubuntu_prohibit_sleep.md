@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Ubuntu禁用Sleep"
+date: 2021-05-07
 categories: 小技巧
 tags:  Linux
 ---

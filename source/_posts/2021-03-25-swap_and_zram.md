@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "创建Swap分区"
+date: 2021-03-25
 categories: 小技巧
 tags:  Linux
 ---

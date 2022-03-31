@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Windows Terminal个性化配置"
+date: 2021-09-18
 categories: 小技巧
 tags:  Windows
 ---

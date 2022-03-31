@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "WSL代理-尝试二"
+date: 2021-11-15
 categories: 小技巧
 tags:  WSL
 ---

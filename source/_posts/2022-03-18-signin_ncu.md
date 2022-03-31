@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "github actions打卡"
+date: 2022-03-18
 categories: 小技巧
 tags:  [ncu, python]
 ---

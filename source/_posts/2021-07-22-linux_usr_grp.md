@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "文件权限"
+date: 2021-07-22
 categories: 知识记录
 tags:  Linux
 ---

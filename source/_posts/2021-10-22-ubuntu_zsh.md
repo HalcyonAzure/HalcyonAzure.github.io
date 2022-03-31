@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Oh My Zsh安装手册"
+date: 2021-10-22
 categories: 安装引导
 tags:  Linux
 ---

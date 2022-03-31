@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "配置多ssh密钥"
+date: 2021-05-09
 categories: 小技巧
 tags:  Linux
 ---

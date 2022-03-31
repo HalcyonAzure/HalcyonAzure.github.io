@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Docker容器内操作"
+date: 2021-08-02
 categories: 小技巧
 tags:  Docker
 ---

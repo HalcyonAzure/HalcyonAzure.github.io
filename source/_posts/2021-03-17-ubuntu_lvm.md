@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "拓展Ubuntu服务器LVM分区"
+date: 2021-03-17
 categories: 小技巧
 tags:  Linux
 ---

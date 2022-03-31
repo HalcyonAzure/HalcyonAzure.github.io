@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "UUID挂载硬盘"
+date: 2021-05-22
 categories: 小技巧
 tags:  Linux
 ---

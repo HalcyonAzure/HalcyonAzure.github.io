@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "AdGuardHome与OpenClash兼容配置"
+date: 2021-08-06
 categories: 小技巧
 tags:  OpenWRT
 ---

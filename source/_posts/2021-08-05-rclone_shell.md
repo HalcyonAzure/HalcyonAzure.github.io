@@ -1,6 +1,7 @@
 ---
 layout: article
 hide: true
+date: 2021-08-05
 title: "Rclone同步脚本[作废]"
 categories: 小技巧
 tags:  Linux

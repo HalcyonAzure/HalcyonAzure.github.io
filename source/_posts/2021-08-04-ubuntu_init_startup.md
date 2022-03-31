@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "配置init.d开机自启"
+date: 2021-08-04
 categories: 小技巧
 tags:  Linux
 ---

@@ -1,6 +1,7 @@
 ---
 layout: article
 title: ZeroTier搭建Planet服务器
+date: 2021-05-10
 categories: 安装引导
 tags:  ZeroTier
 ---

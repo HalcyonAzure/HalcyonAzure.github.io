@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "ZeroTier广播局域网游戏"
+date: 2021-08-30
 categories: 小技巧
 tags:  ZeroTier
 ---

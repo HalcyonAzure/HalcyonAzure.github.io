@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "CloudReve搭建引导"
+date: 2021-04-06
 categories: 安装引导
 tags:  Linux
 ---

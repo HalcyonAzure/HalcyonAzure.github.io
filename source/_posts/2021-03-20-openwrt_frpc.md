@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Openwrt配置Frpc"
+date: 2021-03-20
 categories: 安装引导
 tags:  Frp
 ---

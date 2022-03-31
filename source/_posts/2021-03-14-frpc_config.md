@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "【脚本】Frpc手动安装引导"
+date: 2021-03-14
 categories: 安装引导
 tags:  Frp
 ---

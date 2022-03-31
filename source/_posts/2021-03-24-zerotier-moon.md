@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "ZeroTier配置Moon服务器"
+date: 2021-03-24
 categories: 安装引导
 tags:  ZeroTier
 ---

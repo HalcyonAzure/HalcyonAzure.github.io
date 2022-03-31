@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "alternatives切换环境"
+date: 2022-01-29
 categories: 小技巧
 tags:  Linux
 ---

@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Github PAT存储"
+date: 2022-03-15
 categories: 小技巧
 tags:  Git
 ---

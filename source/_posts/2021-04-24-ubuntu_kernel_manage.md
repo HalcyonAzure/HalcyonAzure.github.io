@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "Linux内核管理"
+date: 2021-04-24
 categories: 小技巧
 tags:  Linux
 ---

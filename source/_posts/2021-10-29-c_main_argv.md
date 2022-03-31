@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "命令行参数"
+date: 2021-10-29
 categories: 知识记录
 tags:  cpp
 ---

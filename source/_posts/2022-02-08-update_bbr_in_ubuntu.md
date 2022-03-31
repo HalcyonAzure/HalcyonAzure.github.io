@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "开启TCP BBR算法"
+date: 2022-02-08
 categories: 小技巧
 tags:  Linux
 ---

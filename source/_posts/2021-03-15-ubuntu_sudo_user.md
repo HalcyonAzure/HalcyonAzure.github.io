@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "创建sudo用户"
+date: 2021-03-15
 categories: 小技巧
 tags: Linux
 ---

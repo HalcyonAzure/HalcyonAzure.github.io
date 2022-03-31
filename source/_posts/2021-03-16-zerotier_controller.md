@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "搭建ZeroTier网络控制台"
+date: 2021-03-16
 categories: 安装引导
 tags:  ZeroTier
 ---

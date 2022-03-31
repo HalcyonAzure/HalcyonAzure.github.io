@@ -1,6 +1,7 @@
 ---
 layout: article
 title: "ZeroNSD搭建引导"
+date: 2021-09-09
 categories: 安装引导
 tags:  ZeroTier
 ---
