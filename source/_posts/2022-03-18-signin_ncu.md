@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "github actions打卡"
+title: "通过Python提交ncu每日健康信息"
 date: 2022-03-18
 categories: 小技巧
-tags:  [ncu, python]
+tags: python
 ---
 
 ## 声明
@@ -49,9 +49,10 @@ QQ号以及QQ的SMTP密码
 
 [百度搜索：获取QQ邮箱的SMTP密码](https://www.baidu.com/s?wd=%E8%8E%B7%E5%8F%96QQ%E9%82%AE%E7%AE%B1%E7%9A%84SMTP%E5%AF%86%E7%A0%81)
 
-## 编辑脚本
+## 编辑Python脚本
 
-出于对于疫情大环境下的数据考虑，这部分手把手教材略去，大致思路就是通过对应接口抓包后发包即可，更新`Token`通过接口`LoginByToken`实现，打卡通过`SignIn`接口实现。
+大致思路就是通过对应接口抓包后发包即可，更新`Token`通过接口`LoginByToken`实现，打卡通过`SignIn`接口实现。
+参考脚本：[Scripts/ncu.py](https://github.com/HalcyonAzure/Scripts/blob/master/python/ncu.py)
 
 ## 运行脚本并测试
 
@@ -59,4 +60,4 @@ QQ号以及QQ的SMTP密码
 
 ## 备注
 
-***每个人都有义务在疫情大环境下对自己的真实信息负责，因此本文去除手把手教程，仅提供部分思路，如果有想法欢迎邮件讨论！***
+***每个人都有义务在疫情大环境下对自己的真实信息负责***

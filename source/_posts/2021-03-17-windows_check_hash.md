@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Windows计算文件Hash"
+title: "Windows系统中校验文件哈希值"
 date: 2021-03-17
 categories: 小技巧
-tags:  Windows
+tags: Windows
 ---
 
 ​    每次要查询一个文件的hash值的时候总要打开一个hash校验工具，觉得有些麻烦了，加上也不是所有文件都会经常需要校验，就常常并不想单独下载一个工具，查询到Windows有自带的hash校验指令，于是记录一下，以下内容摘自[知乎](https://zhuanlan.zhihu.com/p/344545687)

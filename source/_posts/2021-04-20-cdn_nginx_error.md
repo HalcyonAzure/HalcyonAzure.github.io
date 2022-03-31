@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Nginx配置CDN回源重定向解决"
+title: "Nginx配置CDN回源重定向导致的无法访问问题"
 date: 2021-04-20
 categories: 小技巧 
-tags:  Nginx
+tags: [Nginx, CDN]
 ---
 
 ## 前言

@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "WSL代理-尝试一"
+title: "WSL关闭防火墙，并通过Clash的TUN模式代理"
 date: 2021-09-16
 categories: 小技巧
-tags:  WSL
+tags: [WSL, Clash]
 ---
 
 ## 摘抄文章
@@ -58,9 +58,9 @@ tags:  WSL
 
 ### 方案二
 
-> 2021.12.6为止，CFW自己的0.19.0版本已经自带TUN的切换，无需使用mixin
+#### 2021.12.6为止，CFW自己的0.19.0版本已经自带TUN的切换(fake-ip模式)
 
-#### 通过Clash的TUN模式接管电脑所有软件的网络
+#### 通过Clash的TUN模式接管电脑所有软件的网络(redir-host模式)
 
 > 博客记录的是最新版本的Clash下通过mixin模式开启TUN模式的简单办法，具体操作仅供参考。
 

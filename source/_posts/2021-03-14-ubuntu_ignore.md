@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "[备忘]Ubuntu禁用Suspend"
+title: "Ubuntu禁用系统休眠"
 date: 2021-03-14
 categories: 小技巧
 tags: Ubuntu

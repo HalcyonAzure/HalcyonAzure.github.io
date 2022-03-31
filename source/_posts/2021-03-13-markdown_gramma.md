@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "【学习笔记】Markdown基本语法"
+title: "Markdown基本语法记录笔记"
 date: 2021-03-13
 categories: 知识记录
-tags:  Markdown
+tags: Markdown
 ---
 
 ------

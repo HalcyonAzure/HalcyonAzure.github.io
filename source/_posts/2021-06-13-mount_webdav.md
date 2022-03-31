@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Linux挂载WebDav"
+title: "Linux通过davfs2挂载WebDav网盘"
 date: 2021-06-13
 categories: 小技巧
-tags:  Linux
+tags: Linux
 ---
 
 > 注：已改用rclone作为较优方案

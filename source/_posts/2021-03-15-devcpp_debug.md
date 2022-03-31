@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Devc++调试设置"
+title: "Devc++调试相关选项配置"
 date: 2021-03-15
 categories: 小技巧
 tags: Devc++

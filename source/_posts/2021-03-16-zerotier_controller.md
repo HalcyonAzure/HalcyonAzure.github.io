@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "搭建ZeroTier网络控制台"
+title: "搭建ZeroTier Controller管理网络引导"
 date: 2021-03-16
 categories: 安装引导
-tags:  ZeroTier
+tags: ZeroTier
 ---
 
 > **本来的理解**: 在使用ZeroTier的时候经常会出现穿透失败，或者穿透延迟过大但是中转服务器不好用的情况，之前有参考过网上的教程来通过一台国内的VPS搭建自己的MOON节点来达到加速的目的，但是最后的效果不尽人意，而且还存在安卓端添加mood节点并不轻松的问题，所以在这里采取直接通过[key-networks/ztncui: ZeroTier network controller UI](https://github.com/key-networks/ztncui)搭建自己的ZeroTier根服务器

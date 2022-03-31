@@ -3,7 +3,7 @@ layout: article
 title: "Google镜像站创建引导"
 date: 2021-04-20
 categories: 安装引导
-tags:  Nginx
+tags: Nginx
 ---
 
 步骤如下:

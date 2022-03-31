@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "创建sudo用户"
+title: "Ubuntu下创建拥有sudo权限的用户"
 date: 2021-03-15
 categories: 小技巧
-tags: Linux
+tags: [Linux, Ubuntu]
 ---
 
 1. 添加用户

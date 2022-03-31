@@ -3,7 +3,7 @@ layout: article
 title: "归并排序"
 date: 2021-03-31
 categories: 知识记录
-tags:  [Algorithm]
+tags: 算法
 ---
 
 ## 代码模板

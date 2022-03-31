@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Cloudflare Partner配置"
+title: "Cloudflare Partner的CDN配置"
 date: 2021-04-27
 categories: 小技巧
-tags:  Dns
+tags: CDN
 ---
 
 ## 通过Dnspod解析域名

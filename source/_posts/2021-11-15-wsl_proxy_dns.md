@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "WSL代理-尝试二"
+title: "WSL通过zsh设置代理，并设置开机自启动"
 date: 2021-11-15
 categories: 小技巧
-tags:  WSL
+tags: [WSL, zsh]
 ---
 
 ## 前言

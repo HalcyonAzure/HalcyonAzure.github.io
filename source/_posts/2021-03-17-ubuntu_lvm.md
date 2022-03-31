@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "拓展Ubuntu服务器LVM分区"
+title: "拓展Ubuntu服务器内LVM分区容量引导"
 date: 2021-03-17
 categories: 小技巧
-tags:  Linux
+tags: Linux
 ---
 
 > 参考文章：[解决 Linux /dev/mapper/ubuntu--vg-ubuntu--lv 磁盘空间不足的问题](https://blog.csdn.net/Fly_1213/article/details/105142427)

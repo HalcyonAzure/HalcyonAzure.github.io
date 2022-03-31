@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Windows字体切换"
+title: "Windows字体切换的两种方法"
 date: 2021-10-03
 categories: 小技巧
-tags:  Windows
+tags: Windows
 ---
 
 ## 参考链接

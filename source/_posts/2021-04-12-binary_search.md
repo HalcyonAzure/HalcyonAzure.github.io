@@ -3,7 +3,7 @@ layout: article
 title: "二分查找"
 date: 2021-04-12
 categories: 知识记录
-tags:  Algorithm
+tags: Algorithm
 ---
 
 ## 代码模板

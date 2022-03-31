@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "配置init.d开机自启"
+title: "Linux通过修改init.d脚本自启动脚本"
 date: 2021-08-04
 categories: 小技巧
-tags:  Linux
+tags: Linux
 ---
 
 ## 流程

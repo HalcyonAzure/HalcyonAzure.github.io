@@ -1,14 +1,12 @@
 ---
 layout: article
-title: "【脚本】Frpc手动安装引导"
+title: "手动在服务器上安装Frp"
 date: 2021-03-14
 categories: 安装引导
-tags:  Frp
+tags: Frp
 ---
 
 ---
-
-> 部署Frpc并没有找到类似Frps的一键安装脚本，所以只好自己总结安装并启用Frpc的指令，以备不时之需。
 
 1. 首先，在 [fatedier/frp](https://github.com/fatedier/frp/releases/)中下载最新版的frp打包程序，以下以0.35.1版本为例
 
@@ -55,3 +53,5 @@ tags:  Frp
    cd ~
    rm -rf frp_0.35.1_linux_amd64
    ```
+
+> 对于Frps的安装，可以使用该仓库下的一键安装脚本进行配置：[frps-onekey](https://github.com/MvsCode/frps-onekey)

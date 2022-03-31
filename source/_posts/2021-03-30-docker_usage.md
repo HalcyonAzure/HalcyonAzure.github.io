@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "安装Docker"
+title: "Docker的安装和镜像设置"
 date: 2021-03-30
 categories: 安装引导
-tags:  Docker
+tags: Docker
 ---
 
 参考资料:

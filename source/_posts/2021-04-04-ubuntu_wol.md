@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Linux配置网络唤醒"
+title: "Linux配置局域网下网络唤醒"
 date: 2021-04-04
 categories: 小技巧
-tags:  Linux
+tags: Linux
 ---
 
 1. 安装网络管理工具

@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Ubuntu禁用Sleep"
+title: "Ubuntu通过systemd禁用系统睡眠"
 date: 2021-05-07
 categories: 小技巧
-tags:  Linux
+tags: Linux
 ---
 
 ## 参考网址

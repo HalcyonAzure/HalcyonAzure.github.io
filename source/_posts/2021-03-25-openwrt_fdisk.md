@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "fdisk分区教程"
+title: "Linux通过fdisk分区引导"
 date: 2021-03-25
 categories: 小技巧
-tags:  OpenWRT
+tags: [Linux, OpenWRT]
 ---
 
 参考地址：
@@ -11,7 +11,7 @@ tags:  OpenWRT
 
 ​    在给自己的R2S使用64G的SD卡的时候，安装完毕系统启动发现内存卡中有将近50多G的空间没有得到合理的使用，记录一下通过网上树莓派磁盘扩展分区的步骤来在R2S上同样对SD卡进行分区拓展
 
-## Openwrt磁盘拓展
+## fdisk磁盘拓展
 
 1. 磁盘检查
 

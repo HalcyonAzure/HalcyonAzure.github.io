@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Docker容器内操作"
+title: "Docker传递操作进容器内的不同方式"
 date: 2021-08-02
 categories: 小技巧
-tags:  Docker
+tags: Docker
 ---
 
 ## 进入容器

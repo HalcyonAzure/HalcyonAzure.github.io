@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "AdGuardHome与OpenClash兼容配置"
+title: "使用Adguardhome作为Openclash上游DNS"
 date: 2021-08-06
 categories: 小技巧
-tags:  OpenWRT
+tags: OpenWRT
 ---
 
 ## 设置步骤

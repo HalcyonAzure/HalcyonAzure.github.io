@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Docker简单入门"
+title: "Docker指令和配置手册"
 date: 2021-07-22
-categories: 小技巧 
-tags:  Docker
+categories: 知识记录
+tags: Docker
 ---
 
 参考链接:

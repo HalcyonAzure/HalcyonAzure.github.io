@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Scoop安装手册"
+title: "Windows上通过Scoop管理和安装软件"
 date: 2021-10-04
 categories: 安装引导
-tags:  Windows
+tags: [Windows, Scoop]
 ---
 
 ## 参考文章

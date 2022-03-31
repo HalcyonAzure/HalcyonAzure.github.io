@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Linux内核管理"
+title: "Linux多个不同版本内核卸载管理"
 date: 2021-04-24
 categories: 小技巧
-tags:  Linux
+tags: Linux
 ---
 
 

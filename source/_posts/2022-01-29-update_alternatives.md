@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "alternatives切换环境"
+title: "Linux通过alternatives切换程序版本环境"
 date: 2022-01-29
 categories: 小技巧
-tags:  Linux
+tags: Linux
 ---
 
 ## 参考帖子

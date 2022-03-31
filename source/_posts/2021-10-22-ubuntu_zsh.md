@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Oh My Zsh安装手册"
+title: "Ubuntu下安装Oh My Zsh引导"
 date: 2021-10-22
 categories: 安装引导
-tags:  Linux
+tags: [Linux, zsh]
 ---
 
 ## 参考文章
@@ -53,13 +53,12 @@ apt install fonts-hack
 
 ### 插件配置
 
-1. 安装`zsh-autosuggestions`、`zsh-syntax-highlighting`、`zsh-proxy`和`autojump`
+1. 安装`zsh-autosuggestions`、`zsh-syntax-highlighting`、`zsh-proxy`和`z`
 
    ```shell
    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
    git clone https://github.com/sukkaw/zsh-proxy.git ~/.oh-my-zsh/custom/plugins/zsh-proxy
-   sudo apt install autojump
    ```
 
 2. 配置插件，编辑`.zshrc`文件，在`plugins`处添加，类似效果如下：
@@ -67,7 +66,7 @@ apt install fonts-hack
    ```shell
    ## 根据官方文档，zsh-syntax-highlighting 插件需放在最后
    plugins=(
-     git extract autojump zsh-autosuggestions zsh-proxy zsh-syntax-highlighting 
+     git extract zsh-autosuggestions z zsh-proxy zsh-syntax-highlighting 
    )
    ```
 
