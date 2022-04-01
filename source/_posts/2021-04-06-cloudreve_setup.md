@@ -20,7 +20,7 @@ tags: Linux
 
 2. 在BT面板内添加网站CloudReve，并且设置对应的域名和根目录（下图为示例）
 
-   ![BT面板创建新网站](/2021/04/images/BT_1.png)
+   ![BT面板创建新网站](https://lsky.halc.top/gIy7SN.png)
 
 3. 将可执行文件上传到在宝塔面板设置的根目录中，并`cd`到当前目录
 
@@ -106,7 +106,7 @@ tags: Linux
 
 1. 在宝塔面板的站点设置中，添加反向代理，配置按下图类比设置(主要还是第二步)
 
-   ![BT设置反向代理](/2021/04/images/BT_2.png)
+   ![BT设置反向代理](https://lsky.halc.top/supU6G.png)
 
 2. 点击配置文件，将原本的`location /{}`的内容替换如下内容
 

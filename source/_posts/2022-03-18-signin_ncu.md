@@ -33,17 +33,17 @@ QQ号以及QQ的SMTP密码
 
 1. 在打卡界面中"复制链接"，并在电脑上打开
 
-   ![企业微信](/2021/04/images/ClockIn_1.png)
+   ![企业微信](https://lsky.halc.top/DH7lVf.png)
 
 2. 电脑浏览器打开链接，按F12，此时可能是电子ID，不用管，在右上角找到`Network`，并打开。
 
    (如果提示要按Ctrl+R，按就行)
 
-   ![Network](/2021/04/images/ClockIn_2.png)
+   ![Network](https://lsky.halc.top/Xl1nNE.png)
 
 3. 在`Network`下方找到`loginByToken`，并且找到右边的`Token`信息，复制保存。
 
-   ![TokenGet](/2021/04/images/ClockIn_3.png)
+   ![TokenGet](https://lsky.halc.top/IpnCQJ.png)
 
 ## 获取QQ邮箱的SMTP密码
 

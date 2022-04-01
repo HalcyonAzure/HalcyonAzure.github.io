@@ -117,10 +117,10 @@ Markdown中的图片分为三个部分，分别是“图片介绍”，“图床
 以下为一个示例
 
 ```markdown
-![背景](/images/background-cover.jpg "背景图片")
+![背景](https://lsky.halc.top/LY53bA.jpg)
 ```
 
-示例:   ![背景](/images/background-cover.jpg "背景图片")
+示例:   ![背景](https://lsky.halc.top/LY53bA.jpg)
 
 ---
 

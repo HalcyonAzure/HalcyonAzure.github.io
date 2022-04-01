@@ -115,7 +115,7 @@ tags: ZeroTier
 
    如下图所示:
 
-   ![ZeroTier的Moon节点](/2021/03/images/ZeroTier_Moon.png)
+   ![ZeroTier的Moon节点](https://lsky.halc.top/laU3wA.png)
 
 3. 在/home文件夹下创建moons.d文件夹（修改`cp /home/moons.d`可以修改需要设置的路径）
 

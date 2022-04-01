@@ -14,11 +14,11 @@ tags: Devc++
 
 1. 首先，打开devc++之后，找到上方的Tools(工具)，如下图所示，打开其中的Compiler options(编译选项)
 
-   ![工具](/2021/03/images/Devc_debug_1.png "Tools")
+   ![工具](https://lsky.halc.top/khFnOI.png)
 
 2. 然后按下图开启调试信息（设置为yes）
 
-   ![调试信息](/2021/03/images/Devc_debug_2.png "Debug Info")
+   ![调试信息](https://lsky.halc.top/Dy3AFE.png)
 
 ## 显示鼠标所指变量
 
@@ -26,4 +26,4 @@ tags: Devc++
 
 2. 启用下图黄线部分的选项，开启显示指针所指变量的值
 
-   ![指针调试](/2021/03/images/Devc_debug_3.png "Point Debug")
+   ![指针调试](https://lsky.halc.top/lAqdhj.png)

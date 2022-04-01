@@ -30,7 +30,7 @@ tags: Windows
 
    显示效果:
 
-   ![Hash_1](/2021/03/images/HashCheck_1.png)
+   ![Hash_1](https://lsky.halc.top/VSkKLK.png)
 
    其中，为了方便观察可以通过管道使用Format-List
 
@@ -38,4 +38,4 @@ tags: Windows
 
    显示效果:
 
-   ![Hash_2](/2021/03/images/HashCheck_2.png)
+   ![Hash_2](https://lsky.halc.top/QFCdUM.png)

@@ -23,7 +23,7 @@ tags: [Linux, OpenWRT]
 
    在`fdisk`后的`Command( m for help):`后输入`p`来查看分区情况
 
-   ![fdiskp](/2021/03/images/opsd1.png)
+   ![fdiskp](https://lsky.halc.top/alLijz.png)
 
    其中可以看到最后分区的`End`为`3817471`
 

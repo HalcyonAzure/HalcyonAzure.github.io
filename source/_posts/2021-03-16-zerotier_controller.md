@@ -110,11 +110,11 @@ chmod 600 privkey.pem
 
 4. 点击如下图所示的Easy Setup来快速完成一个IPv4的DHCP分配
 
-   ![ESETUP](/2021/03/images/ztnui_1.png "DHCP分配")
+   ![ESETUP](https://lsky.halc.top/kvEZFd.png)
 
 5. 如下图所示填入对应信息
 
-   ![IPPOOL](/2021/03/images/ztnui_2.png "IP_POOL")
+   ![IPPOOL](https://lsky.halc.top/LhjtZx.png)
 
    以下为一个例子:
 

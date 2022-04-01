@@ -28,16 +28,16 @@ tags: CDN
 
 3. 将自己需要使用CDN的域名添加到控制台下，TTL设置两分钟，CDN设置为开启
 
-   ![域名添加](\2021\04\images\CDN_1.png)
+   ![域名添加](https://lsky.halc.top/hIWDDR.png)
 
 4. 添加完毕以后在CNAME接入处可以看到主机名对应的CNAME信息，在Dnspod设置对应的解析就可以使用CDN的解析服务。
 
-   ![域名添加](\2021\04\images\CDN_2.png)
+   ![域名添加](https://lsky.halc.top/C0TJFQ.png)
 
    <!-- markdownlint-disable MD033 -->
    <div align=center>CNAME信息 </div>
 
-   ![Dnspod设置](\2021\04\images\CDN_3.png)
+   ![Dnspod设置](https://lsky.halc.top/zI17lg.png)
 
    <div align=center>Dnspod设置 </div>
 

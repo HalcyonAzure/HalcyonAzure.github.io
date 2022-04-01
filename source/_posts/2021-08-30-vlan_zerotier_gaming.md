@@ -24,29 +24,29 @@ tags: [Windows, ZeroTier]
 
 1. 在电脑右下角打开“**网络和Internet**”选项
 
-   ![网络和Internet](https://lsky.halc.top/ugjV37.png)
+   ![网络和Internet](https://lsky.halc.top/NeXLax.png)
 
 2. 打开"**更改适配器选项**"
 
-   ![更改适配器选项](https://lsky.halc.top/YWTNFt.png)
+   ![更改适配器选项](https://lsky.halc.top/pBsuTe.png)
 
 3. 打开对应ZeroTier的ID的网络属性
 
-   ![网络属性](https://lsky.halc.top/g5rAT1.png)
+   ![网络属性](https://lsky.halc.top/oXOE9l.png)
 
 4. 打开"**Internet 协议版本 4**"下的"**属性**"
 
-   ![IPv4的属性](https://lsky.halc.top/IzcDwA.png)
+   ![IPv4的属性](https://lsky.halc.top/dOUiQS.png)
 
 5. 打开属性中的“**高级**”
 
-   ![高级](https://lsky.halc.top/LTDPHO.png)
+   ![高级](https://lsky.halc.top/13fbHK.png)
 
 6. 修改自动跃点
 
       > ​    自动跃点的修改就笔者目前看来对日常使用影响不大，介意的可以在和好友联机结束以后重新勾选即可。并且由测试来看，只要重新连接了网络，Windows都会设置回为“自动跃点”
 
-      ![自动跃点](https://lsky.halc.top/wE5fPt.png)
+      ![自动跃点](https://lsky.halc.top/A217p1.png)
 
       > 将优先级设置为1如果不放心的话可以设置为小一点的数字，不过也许有概率无法自动扫描局域网内其他游戏玩家。
 

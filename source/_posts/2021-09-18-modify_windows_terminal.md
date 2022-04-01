@@ -63,19 +63,19 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 
 3. 在`wt`中打开设置，以下图为例：
 
-   <img src="https://lsky.halc.top/usBZUT.png" alt="打开设置.png" style="zoom: 33%;" />
+   <img src="https://lsky.halc.top/XsycIz.png" alt="打开设置.png" style="zoom: 33%;" />
 
 4. 打开JSON设置，以图下为例：
 
-   <img src="https://lsky.halc.top/2wqSOw.png" alt="打开JSON文件.png" style="zoom: 25%;" />
+   <img src="https://lsky.halc.top/FGEI3J.png" alt="打开JSON文件.png" style="zoom: 25%;" />
 
 5. 将刚刚复制的代码粘贴到有`scheme`字样的配置目录下，以下图为例：
 
-   <img src="https://lsky.halc.top/N5CHPI.png" alt="添加主题.png" style="zoom: 33%;" />
+   <img src="https://lsky.halc.top/XURWMD.png" alt="添加主题.png" style="zoom: 33%;" />
 
 6. 保存后，回到`wt`的设置，选择平时主要使用的窗口界面（e.g.`PowerShell`）然后选择外观，然后选择自己添加的主题，以下图为例：
 
-   <img src="https://lsky.halc.top/oCFtvM.png" alt="修改config" style="zoom: 25%;" />
+   <img src="https://lsky.halc.top/8SSNzA.png" alt="修改config" style="zoom: 25%;" />
 
 #### 安装 Nerd-Fonts 字体
 
