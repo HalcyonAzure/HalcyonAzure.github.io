@@ -47,9 +47,19 @@ apt install fonts-hack
    vim ~/.zshrc
    ```
 
-2. 修改主题（以agnoster为例）
+2. 修改主题（以[powerlevel10k](https://github.com/romkatv/powerlevel10k)为例）
 
-   将`ZSH_THEME="xxx"`改为`ZSH_THEME="agnoster"`
+   1. 拉取主题仓库
+
+      ```zsh
+      git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+      ```
+
+   2. 在`~/.zshrc`下修改主题内容
+
+      ```zsh
+      ZSH_THEME="powerlevel10k/powerlevel10k"
+      ```
 
 ### 插件配置
 
