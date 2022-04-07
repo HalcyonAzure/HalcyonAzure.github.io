@@ -2,6 +2,7 @@
 layout: article
 title: "Ubuntu下安装Oh My Zsh引导"
 date: 2021-10-22
+updated: 2022-04-07
 categories: 安装引导
 tags: [Linux, zsh]
 ---
