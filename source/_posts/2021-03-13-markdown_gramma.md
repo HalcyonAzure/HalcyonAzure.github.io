@@ -2,6 +2,7 @@
 layout: article
 title: "Markdown基本语法记录笔记"
 date: 2021-03-13
+updated: 2021-04-13
 categories: 知识记录
 tags: Markdown
 ---
@@ -161,6 +162,24 @@ Markdown中的图片分为三个部分，分别是“图片介绍”，“图床
  ```
 
 示例的话上面的很多内容都采用了代码块的方法，所以就不多做展示了
+
+### 代码折叠
+
+记录一个实现代码折叠的小技巧
+
+```markdown
+<details>
+<summary>bottom</summary>
+`code here`
+</details>
+```
+
+效果
+
+<details>
+<summary>bottom</summary>
+`code here`
+</details>
 
 ## 八、列表
 
