@@ -2,7 +2,7 @@
 layout: article
 title: "Markdown基本语法记录笔记"
 date: 2021-03-13
-updated: 2021-04-13
+updated: 2022-04-13
 categories: 知识记录
 tags: Markdown
 ---
