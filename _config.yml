@@ -103,7 +103,7 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/HalcyonAzure/hexo-blog.git
+  repo: git@github.com:HalcyonAzure/HalcyonAzure.github.io.git
   branch: master
   message: ":rocket: Deployed by Hexo"
 
