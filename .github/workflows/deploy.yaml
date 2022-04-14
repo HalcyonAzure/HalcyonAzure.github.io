@@ -1,0 +1,54 @@
+name: Hexo Deploy
+
+on:
+  push:
+    branches:
+      - hexo
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: hexo
+
+    # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
+      - name: Cache node modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-hexo-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-hexo
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm ci
+          npm install -g hexo-cli
+
+      # Deploy hexo blog website.
+      - name: Build and Deploy
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "halc-days@outlook.com"
+          git config --global user.name "HalcyonAzure"
+          hexo g -d
+          rm -rf ~/.ssh/id_rsa
+
+      # - name: debugger
+      #   uses: halfcoke/gitactions-debugger@v1
+      #   timeout-minutes: 30
+      #   continue-on-error: true
+      #   with:
+      #     frp_server_addr: ${{ secrets.FRP_SERVER_ADDR }}
+      #     frp_server_port: ${{ secrets.FRP_SERVER_PORT }}
+      #     frp_token: ${{ secrets.FRP_TOKEN }}
+      #     ssh_port: ${{ secrets.SSH_PORT }}
+      #     timeout: 30
