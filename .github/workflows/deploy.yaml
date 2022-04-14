@@ -20,15 +20,14 @@ jobs:
         id: cache
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-hexo-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-hexo
+            ${{ runner.os }}-node-v2
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm ci
-          npm install -g hexo-cli
 
       # Deploy hexo blog website.
       - name: Build and Deploy
@@ -39,16 +38,5 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "halc-days@outlook.com"
           git config --global user.name "HalcyonAzure"
-          hexo g -d
+          npx hexo g -d
           rm -rf ~/.ssh/id_rsa
-
-      # - name: debugger
-      #   uses: halfcoke/gitactions-debugger@v1
-      #   timeout-minutes: 30
-      #   continue-on-error: true
-      #   with:
-      #     frp_server_addr: ${{ secrets.FRP_SERVER_ADDR }}
-      #     frp_server_port: ${{ secrets.FRP_SERVER_PORT }}
-      #     frp_token: ${{ secrets.FRP_TOKEN }}
-      #     ssh_port: ${{ secrets.SSH_PORT }}
-      #     timeout: 30
