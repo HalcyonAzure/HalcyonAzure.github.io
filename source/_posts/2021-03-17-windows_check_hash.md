@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Windows系统中校验文件哈希值"
-date: 2021-03-17
+date: 2021-03-17 10:00:00
 categories: 小技巧
 tags: Windows
 ---

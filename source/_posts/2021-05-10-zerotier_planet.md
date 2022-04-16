@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "ZeroTier搭建Planet服务器引导"
-date: 2021-05-10
+date: 2021-05-10 10:00:00
 categories: 安装引导
 tags: ZeroTier
 ---

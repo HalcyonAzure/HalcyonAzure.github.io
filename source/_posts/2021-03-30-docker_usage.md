@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Docker的安装和镜像设置"
-date: 2021-03-30
+date: 2021-03-30 10:00:00
 categories: 安装引导
 tags: Docker
 ---

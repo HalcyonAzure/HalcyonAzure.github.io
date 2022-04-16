@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Rsync使用方法摘抄"
-date: 2021-08-04
+date: 2021-08-04 10:00:00
 categories: 知识记录
 tags: Linux
 ---

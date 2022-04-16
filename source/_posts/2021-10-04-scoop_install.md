@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Windows上通过Scoop管理和安装软件"
-date: 2021-10-04
+date: 2021-10-04 10:00:00
 categories: 安装引导
 tags: [Windows, Scoop]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Ubuntu禁用系统休眠"
-date: 2021-03-14
+date: 2021-03-14 10:00:00
 categories: 小技巧
 tags: Ubuntu
 ---

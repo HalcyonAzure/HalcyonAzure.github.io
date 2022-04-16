@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "使用Github Actions自动部署Hexo"
-date: 2022-04-15
+date: 2022-04-15 14:00:00
 categories: 小技巧
 tags: hexo
 ---

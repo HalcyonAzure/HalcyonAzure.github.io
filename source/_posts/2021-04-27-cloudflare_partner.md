@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Cloudflare Partner的CDN配置"
-date: 2021-04-27
+date: 2021-04-27 10:00:00
 categories: 小技巧
 tags: CDN
 ---

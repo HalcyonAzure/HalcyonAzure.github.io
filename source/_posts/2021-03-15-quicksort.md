@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "快速排序"
-date: 2021-03-15
+date: 2021-03-15 10:00:00
 categories: 知识记录
 tags: 算法
 ---

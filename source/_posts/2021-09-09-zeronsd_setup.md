@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "ZeroTier的私有DNS服务器ZeroNSD搭建引导"
-date: 2021-09-09
+date: 2021-09-09 10:00:00
 categories: 安装引导
 tags: ZeroTier
 ---

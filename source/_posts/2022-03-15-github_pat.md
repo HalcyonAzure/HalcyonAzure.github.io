@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Github的PAT口令的密码记录和保存方案"
-date: 2022-03-15
+date: 2022-03-15 10:00:00
 categories: 小技巧
 tags: Github
 ---

@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Oh My Posh美化Windows Terminal引导"
-date: 2021-09-18
+date: 2021-09-18 10:00:00
 categories: 小技巧
 tags: [Windows, PowerShell]
 ---

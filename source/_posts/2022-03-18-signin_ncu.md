@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "通过Python提交ncu每日健康信息"
-date: 2022-03-18
+date: 2022-03-18 10:00:00
 categories: 小技巧
 tags: python
 ---

@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Linux下有关用户和组的文件权限变动"
-date: 2021-07-22
+date: 2021-07-22 10:00:00
 categories: 知识记录
 tags: Linux
 ---

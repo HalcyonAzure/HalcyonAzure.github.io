@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Linux通过修改init.d脚本自启动脚本"
-date: 2021-08-04
+date: 2021-08-04 10:00:00
 categories: 小技巧
 tags: Linux
 ---

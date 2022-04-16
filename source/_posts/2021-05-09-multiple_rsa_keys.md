@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "不同服务器配置不同SSH密钥登入引导"
-date: 2021-05-09
+date: 2021-05-09 10:00:00
 categories: 小技巧
 tags: Linux
 ---

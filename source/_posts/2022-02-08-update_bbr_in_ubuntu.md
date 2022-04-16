@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Ubuntu上开启内核BBR算法来提高TCP吞吐性能"
-date: 2022-02-08
+date: 2022-02-08 10:00:00
 categories: 小技巧
 tags: Linux
 ---

@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "WSL通过zsh设置代理，并设置开机自启动"
-date: 2021-11-15
+date: 2021-11-15 10:00:00
 categories: 小技巧
 tags: [WSL, zsh]
 ---

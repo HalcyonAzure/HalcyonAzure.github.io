@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "归并排序"
-date: 2021-03-31
+date: 2021-03-31 10:00:00
 categories: 知识记录
 tags: 算法
 ---

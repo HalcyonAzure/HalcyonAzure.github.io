@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Docker传递操作进容器内的不同方式"
-date: 2021-08-02
+date: 2021-08-02 10:00:00
 categories: 小技巧
 tags: Docker
 ---
