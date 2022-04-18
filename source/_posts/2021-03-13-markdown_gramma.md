@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Markdown基本语法记录笔记"
 date: 2021-03-13 10:00:00
 updated: 2022-04-13 13:00:00

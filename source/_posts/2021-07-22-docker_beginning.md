@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Docker指令和配置手册"
 date: 2021-07-22 10:00:00
 categories: 知识记录

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "二分查找"
 date: 2021-04-12 10:00:00
 categories: 知识记录

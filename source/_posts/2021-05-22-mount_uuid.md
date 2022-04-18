@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Linux下通过硬盘UUID进行挂载"
 date: 2021-05-22 10:00:00
 categories: 小技巧

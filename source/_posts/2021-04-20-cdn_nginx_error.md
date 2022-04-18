@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Nginx配置CDN回源重定向导致的无法访问问题"
 date: 2021-04-20 10:00:00
 categories: 小技巧 

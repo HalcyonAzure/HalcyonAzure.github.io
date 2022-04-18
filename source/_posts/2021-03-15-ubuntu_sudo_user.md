@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Ubuntu下创建拥有sudo权限的用户"
 date: 2021-03-15 10:00:00
 categories: 小技巧

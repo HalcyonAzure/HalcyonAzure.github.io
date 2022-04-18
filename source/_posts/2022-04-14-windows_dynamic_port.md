@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "解决Windows未使用端口被占用问题"
 date: 2022-04-14 16:00:00
 categories: 小技巧

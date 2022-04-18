@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Oh My Posh美化Windows Terminal引导"
 date: 2021-09-18 10:00:00
 categories: 小技巧

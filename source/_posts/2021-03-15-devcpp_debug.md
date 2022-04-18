@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Devc++调试相关选项配置"
 date: 2021-03-15 10:00:00
 categories: 小技巧

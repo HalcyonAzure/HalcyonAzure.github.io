@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "快速排序"
 date: 2021-03-15 10:00:00
 categories: 知识记录

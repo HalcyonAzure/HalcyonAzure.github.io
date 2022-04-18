@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "CloudReve个人网盘引导"
 date: 2021-04-06 10:00:00
 categories: 安装引导

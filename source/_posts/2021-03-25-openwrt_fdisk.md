@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Linux通过fdisk分区引导"
 date: 2021-03-25 10:00:00
 categories: 小技巧

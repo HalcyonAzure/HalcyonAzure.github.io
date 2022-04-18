@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Openwrt系统内配置Frpc自启动"
 date: 2021-03-20 10:00:00
 categories: 安装引导

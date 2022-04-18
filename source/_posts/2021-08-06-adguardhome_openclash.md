@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "使用Adguardhome作为Openclash上游DNS"
 date: 2021-08-06 10:00:00
 categories: 小技巧

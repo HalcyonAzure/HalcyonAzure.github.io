@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "逆序对"
 date: 2021-04-02 10:00:00
 categories: 知识记录

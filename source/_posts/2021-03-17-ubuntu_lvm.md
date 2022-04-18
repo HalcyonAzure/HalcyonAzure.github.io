@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "拓展Ubuntu服务器内LVM分区容量引导"
 date: 2021-03-17 10:00:00
 categories: 小技巧

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Google镜像站创建引导"
 date: 2021-04-20 10:00:00
 categories: 安装引导

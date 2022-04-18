@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "手动在服务器上安装Frp"
 date: 2021-03-14 10:00:00
 categories: 安装引导

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "搭建ZeroTier Controller管理网络引导"
 date: 2021-03-16 10:00:00
 categories: 安装引导

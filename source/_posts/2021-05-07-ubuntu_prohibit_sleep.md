@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Ubuntu通过systemd禁用系统睡眠"
 date: 2021-05-07 10:00:00
 categories: 小技巧

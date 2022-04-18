@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "程序main函数入口arg参数的用处"
 date: 2021-10-29 10:00:00
 categories: 知识记录
