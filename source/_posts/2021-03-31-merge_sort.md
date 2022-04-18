@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "归并排序"
-date: 2021-03-31 10:00:00
+title: 归并排序
 categories: 知识记录
 tags: 算法
+abbrlink: 1599bffe
+date: 2021-03-31 10:00:00
 ---
 
 ## 代码模板

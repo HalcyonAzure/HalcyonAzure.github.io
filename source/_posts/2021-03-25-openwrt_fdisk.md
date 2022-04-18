@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "Linux通过fdisk分区引导"
-date: 2021-03-25 10:00:00
+title: Linux通过fdisk分区引导
 categories: 小技巧
-tags: [Linux, OpenWRT]
+tags:
+  - Linux
+  - OpenWRT
+abbrlink: 3efcbb51
+date: 2021-03-25 10:00:00
 ---
 
 参考地址：

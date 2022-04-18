@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "快速排序"
-date: 2021-03-15 10:00:00
+title: 快速排序
 categories: 知识记录
 tags: 算法
+abbrlink: ff8068c0
+date: 2021-03-15 10:00:00
 ---
 
 ## 代码模板

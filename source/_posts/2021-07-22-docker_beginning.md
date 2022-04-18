@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Docker指令和配置手册"
-date: 2021-07-22 10:00:00
+title: Docker指令和配置手册
 categories: 知识记录
 tags: Docker
+abbrlink: abf1d877
+date: 2021-07-22 10:00:00
 ---
 
 参考链接:

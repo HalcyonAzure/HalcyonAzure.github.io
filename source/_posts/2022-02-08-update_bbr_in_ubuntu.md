@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Ubuntu上开启内核BBR算法来提高TCP吞吐性能"
-date: 2022-02-08 10:00:00
+title: Ubuntu上开启内核BBR算法来提高TCP吞吐性能
 categories: 小技巧
 tags: Linux
+abbrlink: 2f2e6810
+date: 2022-02-08 10:00:00
 ---
 
 参考文章：[How to enable BBR on Ubuntu 20.04](https://wiki.crowncloud.net/?How_to_enable_BBR_on_Ubuntu_20_04)

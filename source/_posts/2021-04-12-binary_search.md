@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "二分查找"
-date: 2021-04-12 10:00:00
+title: 二分查找
 categories: 知识记录
 tags: Algorithm
+abbrlink: e8eb0481
+date: 2021-04-12 10:00:00
 ---
 
 ## 代码模板

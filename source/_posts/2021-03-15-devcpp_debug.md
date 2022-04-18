@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Devc++调试相关选项配置"
-date: 2021-03-15 10:00:00
+title: Devc++调试相关选项配置
 categories: 小技巧
 tags: Devc++
+abbrlink: c9774a05
+date: 2021-03-15 10:00:00
 ---
 
 > 由于蓝桥杯比赛需要使用Devc++作为IDE工具，平时用习惯了vscode的snap和其他功能以后觉得如果不提前适应一下Devc++的编译环境的话在比赛的时候会吃很大的亏，于是决定之后的学习都用Devc++进行，在此记录一下Devc++启用调试之前需要的一些基本设置

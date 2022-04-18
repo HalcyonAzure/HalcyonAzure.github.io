@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Linux通过修改init.d脚本自启动脚本"
-date: 2021-08-04 10:00:00
+title: Linux通过修改init.d脚本自启动脚本
 categories: 小技巧
 tags: Linux
+abbrlink: f3eca903
+date: 2021-08-04 10:00:00
 ---
 
 ## 流程

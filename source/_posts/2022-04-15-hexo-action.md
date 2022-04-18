@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "使用Github Actions自动部署Hexo"
-date: 2022-04-15 14:00:00
+title: 使用Github Actions自动部署Hexo
 categories: 小技巧
 tags: hexo
+abbrlink: 7bfa5e14
+date: 2022-04-15 14:00:00
 ---
 
 ## 前言

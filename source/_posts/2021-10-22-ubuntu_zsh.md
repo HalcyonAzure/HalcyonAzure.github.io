@@ -1,10 +1,13 @@
 ---
 layout: post
-title: "Ubuntu下安装Oh My Zsh引导"
+title: Ubuntu下安装Oh My Zsh引导
+categories: 安装引导
+tags:
+  - Linux
+  - zsh
+abbrlink: 80f884dc
 date: 2021-10-22 10:00:00
 updated: 2022-04-07 16:00:00
-categories: 安装引导
-tags: [Linux, zsh]
 ---
 
 ## 参考文章

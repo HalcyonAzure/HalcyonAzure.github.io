@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Docker传递操作进容器内的不同方式"
-date: 2021-08-02 10:00:00
+title: Docker传递操作进容器内的不同方式
 categories: 小技巧
 tags: Docker
+abbrlink: 14cd2588
+date: 2021-08-02 10:00:00
 ---
 
 ## 进入容器

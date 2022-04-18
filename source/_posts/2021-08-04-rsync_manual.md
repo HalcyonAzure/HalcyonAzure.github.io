@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Rsync使用方法摘抄"
-date: 2021-08-04 10:00:00
+title: Rsync使用方法摘抄
 categories: 知识记录
 tags: Linux
+abbrlink: 6d032e05
+date: 2021-08-04 10:00:00
 ---
 
 ## 参考文章

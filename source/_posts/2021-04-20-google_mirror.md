@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Google镜像站创建引导"
-date: 2021-04-20 10:00:00
+title: Google镜像站创建引导
 categories: 安装引导
 tags: Nginx
+abbrlink: 15b685e1
+date: 2021-04-20 10:00:00
 ---
 
 步骤如下:

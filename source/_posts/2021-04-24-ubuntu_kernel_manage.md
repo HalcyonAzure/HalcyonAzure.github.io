@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Linux多个不同版本内核卸载管理"
-date: 2021-04-24 10:00:00
+title: Linux多个不同版本内核卸载管理
 categories: 小技巧
 tags: Linux
+abbrlink: 24f916f9
+date: 2021-04-24 10:00:00
 ---
 
 

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "手动在服务器上安装Frp"
-date: 2021-03-14 10:00:00
+title: 手动在服务器上安装Frp
 categories: 安装引导
 tags: Frp
+abbrlink: 1d3a895d
+date: 2021-03-14 10:00:00
 ---
 
 ---

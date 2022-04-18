@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "Windows下修改网络优先级广播ZeroTier进行游戏"
-date: 2021-08-30 10:00:00
+title: Windows下修改网络优先级广播ZeroTier进行游戏
 categories: 小技巧
-tags: [Windows, ZeroTier]
+tags:
+  - Windows
+  - ZeroTier
+abbrlink: aa5ce7f4
+date: 2021-08-30 10:00:00
 ---
 
 ## 前言

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Github的PAT口令的密码记录和保存方案"
-date: 2022-03-15 10:00:00
+title: Github的PAT口令的密码记录和保存方案
 categories: 小技巧
 tags: Github
+abbrlink: a126ef4d
+date: 2022-03-15 10:00:00
 ---
 
 ## 参考链接

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Docker的安装和镜像设置"
-date: 2021-03-30 10:00:00
+title: Docker的安装和镜像设置
 categories: 安装引导
 tags: Docker
+abbrlink: 92f7b8a
+date: 2021-03-30 10:00:00
 ---
 
 参考资料:

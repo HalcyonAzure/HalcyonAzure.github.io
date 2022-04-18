@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "WSL关闭防火墙，并通过Clash的TUN模式代理"
-date: 2021-09-16 10:00:00
+title: WSL关闭防火墙，并通过Clash的TUN模式代理
 categories: 小技巧
-tags: [WSL, Clash]
+tags:
+  - WSL
+  - Clash
+abbrlink: a3a50043
+date: 2021-09-16 10:00:00
 ---
 
 ## 摘抄文章

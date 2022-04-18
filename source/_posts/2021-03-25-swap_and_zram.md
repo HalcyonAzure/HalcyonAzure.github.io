@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Linux下通过swap或zram管理内存"
-date: 2021-03-25 10:00:00
+title: Linux下通过swap或zram管理内存
 categories: 小技巧
 tags: Linux
+abbrlink: 5a7c7761
+date: 2021-03-25 10:00:00
 ---
 
 参考网址:

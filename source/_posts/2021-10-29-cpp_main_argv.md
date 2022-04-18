@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "程序main函数入口arg参数的用处"
-date: 2021-10-29 10:00:00
+title: 程序main函数入口arg参数的用处
 categories: 知识记录
 tags: cpp
+abbrlink: 98326a13
+date: 2021-10-29 10:00:00
 ---
 
 ## 参考文章

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "ZeroTier配置Moon服务器"
-date: 2021-03-24 10:00:00
+title: ZeroTier配置Moon服务器
 categories: 安装引导
 tags: ZeroTier
+abbrlink: c1161a88
+date: 2021-03-24 10:00:00
 ---
 
 参考链接:

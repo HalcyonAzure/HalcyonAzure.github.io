@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "逆序对"
-date: 2021-04-02 10:00:00
+title: 逆序对
 categories: 知识记录
 tags: 算法
+abbrlink: 55aefca0
+date: 2021-04-02 10:00:00
 ---
 
 ## 代码模板

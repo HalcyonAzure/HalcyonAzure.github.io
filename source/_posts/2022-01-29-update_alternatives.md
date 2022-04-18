@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Linux通过alternatives切换程序版本环境"
-date: 2022-01-29 10:00:00
+title: Linux通过alternatives切换程序版本环境
 categories: 小技巧
 tags: Linux
+abbrlink: afb272ac
+date: 2022-01-29 10:00:00
 ---
 
 ## 参考帖子

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Windows字体切换的两种方法"
-date: 2021-10-03 10:00:00
+title: Windows字体切换的两种方法
 categories: 小技巧
 tags: Windows
+abbrlink: 87ec6922
+date: 2021-10-03 10:00:00
 ---
 
 ## 参考链接

@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "Ubuntu下创建拥有sudo权限的用户"
-date: 2021-03-15 10:00:00
+title: Ubuntu下创建拥有sudo权限的用户
 categories: 小技巧
-tags: [Linux, Ubuntu]
+tags:
+  - Linux
+  - Ubuntu
+abbrlink: 9232cf7b
+date: 2021-03-15 10:00:00
 ---
 
 1. 添加用户

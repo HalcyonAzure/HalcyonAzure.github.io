@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "ZeroTier搭建Planet服务器引导"
-date: 2021-05-10 10:00:00
+title: ZeroTier搭建Planet服务器引导
 categories: 安装引导
 tags: ZeroTier
+abbrlink: 1e0fb80b
+date: 2021-05-10 10:00:00
 ---
 
 ## 参考文章

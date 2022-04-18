@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Ubuntu禁用系统休眠"
-date: 2021-03-14 10:00:00
+title: Ubuntu禁用系统休眠
 categories: 小技巧
 tags: Ubuntu
+abbrlink: dea4f344
+date: 2021-03-14 10:00:00
 ---
 
 ## 前言

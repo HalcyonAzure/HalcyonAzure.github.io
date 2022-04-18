@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "不同服务器配置不同SSH密钥登入引导"
-date: 2021-05-09 10:00:00
+title: 不同服务器配置不同SSH密钥登入引导
 categories: 小技巧
 tags: Linux
+abbrlink: 1103ac63
+date: 2021-05-09 10:00:00
 ---
 
 ## 参考文章

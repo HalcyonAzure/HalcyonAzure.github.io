@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Linux下通过硬盘UUID进行挂载"
-date: 2021-05-22 10:00:00
+title: Linux下通过硬盘UUID进行挂载
 categories: 小技巧
 tags: Linux
+abbrlink: c9fc3bb5
+date: 2021-05-22 10:00:00
 ---
 
 ## 参考链接

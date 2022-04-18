@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Cloudflare Partner的CDN配置"
-date: 2021-04-27 10:00:00
+title: Cloudflare Partner的CDN配置
 categories: 小技巧
 tags: CDN
+abbrlink: 6a6a7409
+date: 2021-04-27 10:00:00
 ---
 
 ## 通过Dnspod解析域名
