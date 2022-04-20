@@ -5,14 +5,26 @@ categories: 小技巧
 tags: Github
 abbrlink: a126ef4d
 date: 2022-03-15 10:00:00
+updated: 2022-03-15 21:13:00
 ---
 
 ## 参考链接
 
 * [Where to store my Git personal access token?](https://stackoverflow.com/a/51505417)
 * [GitCreadentitalManager](https://github.com/GitCredentialManager/git-credential-manager/blob/main/docs/credstores.md)
+* [GitCredential](https://git-scm.com/docs/gitcredentials)
 
-## 解决方案引导
+## 简单方案
+
+最简单的方案是讲自己的配置文件用明文保存，在[文档](https://git-scm.com/docs/gitcredentials)中查询可知道指令如下
+
+```shell
+git config --global credential.helper store
+```
+
+在设置`credential.helper`为全局`store`之后，下一次的验证会出现提示并保存，之后则会使用存在`~/.git-credentials`的明文帐号密码进行登入
+
+## 加密方案
 
 为了更好的管理Github的Token，需要一个Git凭证助手来帮我们记忆用户名和对应的PAT，以下为`Git-Credential-Manager-Core`引导
 
