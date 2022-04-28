@@ -5,6 +5,7 @@ categories: 小技巧
 tags: Windows
 abbrlink: 22453a61
 date: 2022-04-14 16:00:00
+updated: 2022-04-28 12:19:00
 ---
 
 ## 参考文章
@@ -34,13 +35,13 @@ netsh int ipv6 show dynamicport udp
 如果需要继续使用`windows Virtual platform form windows feature`（不确定这里是不是指Hyper-V，所以不翻译了）则
 
 1. 关闭Windows服务上对应的功能，关闭后系统会请求重启
-2. 通过以下指令修改动态起始端口（指令中`49152`是Windows缺省设置，参考回答修改是`100000`）
+2. 通过以下指令修改动态起始端口 ~~(`49152`是Windows默认设置)~~ 在使用`adb`连`WSA`的调试时，发现默认端口为`58526`，所以还是用`100000`把
 
    ```ps
-    netsh int ipv4 set dynamicport tcp start=49152 num=1000
-    netsh int ipv4 set dynamicport udp start=49152 num=1000
-    netsh int ipv6 set dynamicport tcp start=49152 num=1000
-    netsh int ipv6 set dynamicport udp start=49152 num=1000
+    netsh int ipv4 set dynamicport tcp start=100000 num=1000
+    netsh int ipv4 set dynamicport udp start=100000 num=1000
+    netsh int ipv6 set dynamicport tcp start=100000 num=1000
+    netsh int ipv6 set dynamicport udp start=100000 num=1000
     ```
 
 3. 重新启用对应的功能
