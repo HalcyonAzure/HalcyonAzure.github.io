@@ -949,6 +949,12 @@ links:
       link: "https://cierra-runis.github.io/",
       avatar: "http://q1.qlogo.cn/g?b=qq&nk=3476997907&s=640"
     }
+    - {
+      title: "小钟的博客",
+      intro: "蛰伏的钟学长",
+      link: "https://smallzhong.github.io/",
+      avatar: "https://avatars.githubusercontent.com/u/55563027?v=4"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
