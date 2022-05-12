@@ -38,10 +38,10 @@ netsh int ipv6 show dynamicport udp
 2. 通过以下指令修改动态起始端口 ~~(`49152`是Windows默认设置)~~ 在使用`adb`连`WSA`的调试时，发现默认端口为`58526`，所以还是用`100000`把
 
    ```ps
-    netsh int ipv4 set dynamicport tcp start=100000 num=1000
-    netsh int ipv4 set dynamicport udp start=100000 num=1000
-    netsh int ipv6 set dynamicport tcp start=100000 num=1000
-    netsh int ipv6 set dynamicport udp start=100000 num=1000
+    netsh int ipv4 set dynamicport tcp start=64536 num=1000
+    netsh int ipv4 set dynamicport udp start=64536 num=1000
+    netsh int ipv6 set dynamicport tcp start=64536 num=1000
+    netsh int ipv6 set dynamicport udp start=64536 num=1000
     ```
 
 3. 重新启用对应的功能
