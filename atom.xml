@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Halcyon Zone</title>
+  <icon>https://halc.top/icon.png</icon>
+  <subtitle>青空域</subtitle>
+  <link href="https://halc.top/atom.xml" rel="self"/>
+  
+  <link href="https://halc.top/"/>
+  <updated>2024-04-26T05:13:01.000Z</updated>
+  <id>https://halc.top/</id>
+  
+  <author>
+    <name>HalcyonAzure</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>标准 Linux 启用 ZeroTier 局域网转发</title>
+    <link href="https://halc.top/p/d556ca0e"/>
+    <id>https://halc.top/p/d556ca0e</id>
+    <published>2024-04-26T05:13:01.000Z</published>
+    <updated>2024-04-26T05:13:01.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;参考文章&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#参考文章&quot;&gt;&lt;/a&gt; 参考文章&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="小技巧" scheme="https://halc.top/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="ZeroTier" scheme="https://halc.top/tags/ZeroTier/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原理分析：UDP和TCP在NAT环境下的P2P打洞实现</title>
+    <link href="https://halc.top/p/bb3a9deb"/>
+    <id>https://halc.top/p/bb3a9deb</id>
+    <published>2024-01-31T09:36:55.000Z</published>
+    <updated>2024-02-21T07:07:09.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;参考文章&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#参考文章&quot;&gt;&lt;/a&gt; 参考文章&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="DNS" scheme="https://halc.top/tags/DNS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>镜像构建：Windows Cloud Image</title>
+    <link href="https://halc.top/p/b9295ba3"/>
+    <id>https://halc.top/p/b9295ba3</id>
+    <published>2024-01-30T02:05:26.000Z</published>
+    <updated>2024-01-30T02:05:26.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;windows-cloud-镜像构建&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#windows-cloud-镜像构建&quot;&gt;&lt;/a&gt; Windows Cloud</summary>
+        
+      
+    
+    
+    
+    <category term="小技巧" scheme="https://halc.top/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="Windows" scheme="https://halc.top/tags/Windows/"/>
+    
+    <category term="Cloud" scheme="https://halc.top/tags/Cloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>性能测试：跨墙的内网穿透工具选择</title>
+    <link href="https://halc.top/p/59e029c8"/>
+    <id>https://halc.top/p/59e029c8</id>
+    <published>2024-01-27T06:58:51.000Z</published>
+    <updated>2024-01-27T06:58:51.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;性能测试跨墙的内网穿透工具选择&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#性能测试跨墙的内网穿透工具选择&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Frp" scheme="https://halc.top/tags/Frp/"/>
+    
+    <category term="Rathole" scheme="https://halc.top/tags/Rathole/"/>
+    
+    <category term="V2Ray" scheme="https://halc.top/tags/V2Ray/"/>
+    
+    <category term="内网穿透" scheme="https://halc.top/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取Cloudflare Tunnel下用户真实IP</title>
+    <link href="https://halc.top/p/f09b73d7"/>
+    <id>https://halc.top/p/f09b73d7</id>
+    <published>2024-01-23T06:10:04.000Z</published>
+    <updated>2024-01-23T06:10:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cloudflare-tunnel-获取用户真实-ip&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cloudflare-tunnel-获取用户真实-ip&quot;&gt;&lt;/a&gt; Cloudflare Tunnel 获取用户真实</summary>
+        
+      
+    
+    
+    
+    <category term="小技巧" scheme="https://halc.top/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="cloudflare" scheme="https://halc.top/tags/cloudflare/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟化：初识IOMMU（TODO）</title>
+    <link href="https://halc.top/p/4416e368"/>
+    <id>https://halc.top/p/4416e368</id>
+    <published>2023-11-28T01:55:52.000Z</published>
+    <updated>2023-11-28T01:55:52.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;初识iommu&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#初识iommu&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="iommu" scheme="https://halc.top/tags/iommu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知识复盘：操作系统的作用</title>
+    <link href="https://halc.top/p/e429c37a"/>
+    <id>https://halc.top/p/e429c37a</id>
+    <published>2023-10-20T18:03:00.000Z</published>
+    <updated>2023-10-20T18:03:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;操作系统的作用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#操作系统的作用&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="OS" scheme="https://halc.top/tags/OS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DNS问题排查思路</title>
+    <link href="https://halc.top/p/23c3db21"/>
+    <id>https://halc.top/p/23c3db21</id>
+    <published>2023-07-30T13:18:11.000Z</published>
+    <updated>2023-07-30T13:18:11.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;参考文章&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#参考文章&quot;&gt;&lt;/a&gt; 参考文章&lt;/h1&gt;
+&lt;p&gt;这篇博客主要是在推特中无意翻到了这篇博客，尝试以翻译的形式做一套笔记，分享的同时加强自己的记忆。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="DNS" scheme="https://halc.top/tags/DNS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络抓包记录</title>
+    <link href="https://halc.top/p/3930e42b"/>
+    <id>https://halc.top/p/3930e42b</id>
+    <published>2023-07-26T18:18:40.000Z</published>
+    <updated>2023-08-03T11:21:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;学习记录&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#学习记录&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="小技巧" scheme="https://halc.top/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="Wireshark" scheme="https://halc.top/tags/Wireshark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法（一）</title>
+    <link href="https://halc.top/p/83fa91fc"/>
+    <id>https://halc.top/p/83fa91fc</id>
+    <published>2023-06-19T16:36:32.000Z</published>
+    <updated>2023-06-19T16:36:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基础算法一&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基础算法一&quot;&gt;&lt;/a&gt; 基础算法（一）&lt;/h1&gt;
+&lt;h2 id=&quot;快速排序&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#快速排序&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="算法" scheme="https://halc.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用clink优化cmd</title>
+    <link href="https://halc.top/p/82bd449c"/>
+    <id>https://halc.top/p/82bd449c</id>
+    <published>2023-06-17T13:08:36.000Z</published>
+    <updated>2023-06-17T13:08:36.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;参考链接&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#参考链接&quot;&gt;&lt;/a&gt; 参考链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="安装引导" scheme="https://halc.top/categories/%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC/"/>
+    
+    
+    <category term="Windows" scheme="https://halc.top/tags/Windows/"/>
+    
+    <category term="cmd" scheme="https://halc.top/tags/cmd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144-Lab6 计算机网络：路由转发</title>
+    <link href="https://halc.top/p/195b5fa9"/>
+    <id>https://halc.top/p/195b5fa9</id>
+    <published>2023-04-24T06:55:44.000Z</published>
+    <updated>2023-04-24T06:55:44.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;路由转发&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#路由转发&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="cs144" scheme="https://halc.top/tags/cs144/"/>
+    
+    <category term="network" scheme="https://halc.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144-Lab5 计算机网络：Network Interface的功能</title>
+    <link href="https://halc.top/p/db490294"/>
+    <id>https://halc.top/p/db490294</id>
+    <published>2023-04-24T04:37:11.000Z</published>
+    <updated>2023-04-24T04:37:11.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;network-interface&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#network-interface&quot;&gt;&lt;/a&gt; Network</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="cs144" scheme="https://halc.top/tags/cs144/"/>
+    
+    <category term="network" scheme="https://halc.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144-Lab4 计算机网络：TCP Connection的实现</title>
+    <link href="https://halc.top/p/10e77bc5"/>
+    <id>https://halc.top/p/10e77bc5</id>
+    <published>2023-04-10T10:27:04.000Z</published>
+    <updated>2023-04-10T10:27:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;tcp-connection&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#tcp-connection&quot;&gt;&lt;/a&gt; TCP Connection&lt;/h2&gt;
+&lt;p&gt;TCP</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="cs144" scheme="https://halc.top/tags/cs144/"/>
+    
+    <category term="network" scheme="https://halc.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Yadm管理Linux配置文件</title>
+    <link href="https://halc.top/p/4457ea2b"/>
+    <id>https://halc.top/p/4457ea2b</id>
+    <published>2022-12-12T14:42:10.000Z</published>
+    <updated>2022-12-12T14:42:10.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今年暑假看&lt;code&gt;Missing-course&lt;/code&gt;的时候开始意识到备份&lt;code&gt;Linux&lt;/code&gt;配置文件的重要性，以后即使切换机器也可以很容易的恢复自己喜欢的编程环境。在简单搜索了几个方式以后，决定使用&lt;code&gt;yadm&lt;/code&gt;作为管理工具，</summary>
+        
+      
+    
+    
+    
+    <category term="小技巧" scheme="https://halc.top/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="Linux" scheme="https://halc.top/tags/Linux/"/>
+    
+    <category term="Yadm" scheme="https://halc.top/tags/Yadm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144-Lab3 计算机网络：TCP Sender的实现</title>
+    <link href="https://halc.top/p/73e1b791"/>
+    <id>https://halc.top/p/73e1b791</id>
+    <published>2022-12-03T08:31:47.000Z</published>
+    <updated>2023-04-10T18:04:14.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;tcp-sender&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#tcp-sender&quot;&gt;&lt;/a&gt; TCP Sender&lt;/h2&gt;
+&lt;h3 id=&quot;需要实现的主要逻辑&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="cs144" scheme="https://halc.top/tags/cs144/"/>
+    
+    <category term="network" scheme="https://halc.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144-Lab2 计算机网络：TCP Receiver的实现</title>
+    <link href="https://halc.top/p/4e68707"/>
+    <id>https://halc.top/p/4e68707</id>
+    <published>2022-11-22T08:46:46.000Z</published>
+    <updated>2023-04-10T18:04:14.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;tcp-receiver&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#tcp-receiver&quot;&gt;&lt;/a&gt; TCP Receiver&lt;/h2&gt;
+&lt;h3 id=&quot;index和seqno的转换&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="cs144" scheme="https://halc.top/tags/cs144/"/>
+    
+    <category term="network" scheme="https://halc.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144-Lab1 计算机网络：字节流重组器</title>
+    <link href="https://halc.top/p/aeda2510"/>
+    <id>https://halc.top/p/aeda2510</id>
+    <published>2022-11-07T07:43:11.000Z</published>
+    <updated>2023-04-10T17:44:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;思路总结&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#思路总结&quot;&gt;&lt;/a&gt; 思路总结&lt;/h2&gt;
+&lt;h3 id=&quot;有问题的方案&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#有问题的方案&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="cs144" scheme="https://halc.top/tags/cs144/"/>
+    
+    <category term="network" scheme="https://halc.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144-Lab0 计算机网络：流的输入和读出</title>
+    <link href="https://halc.top/p/2ca0860a"/>
+    <id>https://halc.top/p/2ca0860a</id>
+    <published>2022-10-29T13:25:30.000Z</published>
+    <updated>2022-11-30T17:03:43.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;热身&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#热身&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="知识记录" scheme="https://halc.top/categories/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="cs144" scheme="https://halc.top/tags/cs144/"/>
+    
+    <category term="network" scheme="https://halc.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ArchWSL安装及基础配置</title>
+    <link href="https://halc.top/p/cdfd3649"/>
+    <id>https://halc.top/p/cdfd3649</id>
+    <published>2022-07-09T15:03:49.000Z</published>
+    <updated>2022-07-09T15:03:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;准备工作&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#准备工作&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="安装引导" scheme="https://halc.top/categories/%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC/"/>
+    
+    
+    <category term="WSL" scheme="https://halc.top/tags/WSL/"/>
+    
+    <category term="Arch" scheme="https://halc.top/tags/Arch/"/>
+    
+  </entry>
+  
+</feed>
